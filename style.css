@@ -34,16 +34,23 @@ body {
 }
 
 #ville:hover {
-  filter: drop-shadow(0 0 8px #0ef3ff);
+  filter: drop-shadow(0 0 20px #0ef3ff)
+          drop-shadow(0 0 30px #0ef3ff)
+          drop-shadow(0 0 40px #0ef3ff);
 }
 
 #ruines:hover {
-  filter: drop-shadow(0 0 8px #ff3c3c);
+  filter: drop-shadow(0 0 20px #ff3c3c)
+          drop-shadow(0 0 30px #ff3c3c)
+          drop-shadow(0 0 40px #ff3c3c);
 }
 
 #foret:hover {
-  filter: drop-shadow(0 0 8px #3cff5c);
+  filter: drop-shadow(0 0 20px #3cff5c)
+          drop-shadow(0 0 30px #3cff5c)
+          drop-shadow(0 0 40px #3cff5c);
 }
+
 
 /* ===== Panneau projet ===== */
 #project-panel {
