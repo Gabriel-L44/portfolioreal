@@ -32,13 +32,15 @@ body {
   transition: filter 0.3s ease;
 }
 
-#region-ville:hover {
+#ville:hover {
   filter: drop-shadow(0 0 8px #0ef3ff);
 }
-#region-ruines:hover {
+
+#ruines:hover {
   filter: drop-shadow(0 0 8px #ff3c3c);
 }
-#region-foret:hover {
+
+#foret:hover {
   filter: drop-shadow(0 0 8px #3cff5c);
 }
 
