@@ -1,0 +1,105 @@
+/* ===== Style global ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0e0e0e;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== Conteneur de la carte ===== */
+.map-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ===== SVG ===== */
+#portfolio-map {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+/* ===== Régions ===== */
+#portfolio-map path {
+  fill: rgba(255, 255, 255, 0.05);
+  stroke: #0ef3ff;
+  stroke-width: 1;
+  transition: fill 0.3s, filter 0.3s, stroke-width 0.3s;
+}
+
+#portfolio-map path:hover {
+  fill: rgba(14, 243, 255, 0.15);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 6px #0ef3ff);
+}
+
+/* ===== Panneau projet ===== */
+#project-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.95);
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.6);
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  padding: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+#project-panel.show {
+  transform: translateX(0);
+}
+
+#project-panel h2 {
+  margin-top: 0;
+  color: #0ef3ff;
+  font-size: 1.6em;
+  border-bottom: 1px solid #0ef3ff;
+  padding-bottom: 10px;
+}
+
+#project-panel p {
+  line-height: 1.5;
+  margin-top: 15px;
+  font-size: 0.95em;
+}
+
+/* ===== Bouton de fermeture ===== */
+#close-panel {
+  margin-top: auto;
+  padding: 10px 15px;
+  background: #0ef3ff;
+  color: #000;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+#close-panel:hover {
+  background: #08c7d9;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  #project-panel {
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    top: auto;
+    transform: translateY(100%);
+  }
+
+  #project-panel.show {
+    transform: translateY(0);
+  }
+}
