@@ -25,17 +25,23 @@ body {
 
 /* ===== Régions ===== */
 #portfolio-map path {
-  fill: transparent;          /* pas de couleur à l’intérieur */
-  stroke: transparent;        /* pas de contour visible */
-  stroke-width: 2;            /* toujours une largeur pour la zone cliquable */
+  fill: transparent;      /* pas de remplissage visible */
+  stroke: transparent;    /* pas de contour */
+  stroke-width: 20;       /* assez large pour agrandir la hitbox */
   cursor: pointer;
-  transition: fill 0.3s, stroke 0.3s;
+  transition: filter 0.3s ease;
 }
 
-#portfolio-map path:hover {
-   fill: rgba(255, 255, 255, 0.05); /* léger voile blanc */
-  stroke: rgba(255, 255, 255, 0.2); /* contour discret */
+#region-ville:hover {
+  filter: drop-shadow(0 0 8px #0ef3ff);
 }
+#region-ruines:hover {
+  filter: drop-shadow(0 0 8px #ff3c3c);
+}
+#region-foret:hover {
+  filter: drop-shadow(0 0 8px #3cff5c);
+}
+
 /* ===== Panneau projet ===== */
 #project-panel {
   position: fixed;
