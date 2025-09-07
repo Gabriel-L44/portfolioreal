@@ -25,18 +25,17 @@ body {
 
 /* ===== Régions ===== */
 #portfolio-map path {
-  fill: rgba(255, 255, 255, 0.05);
-  stroke: #0ef3ff;
-  stroke-width: 1;
-  transition: fill 0.3s, filter 0.3s, stroke-width 0.3s;
+  fill: transparent;          /* pas de couleur à l’intérieur */
+  stroke: transparent;        /* pas de contour visible */
+  stroke-width: 2;            /* toujours une largeur pour la zone cliquable */
+  cursor: pointer;
+  transition: fill 0.3s, stroke 0.3s;
 }
 
 #portfolio-map path:hover {
-  fill: rgba(14, 243, 255, 0.15);
-  stroke-width: 2;
-  filter: drop-shadow(0 0 6px #0ef3ff);
+   fill: rgba(255, 255, 255, 0.05); /* léger voile blanc */
+  stroke: rgba(255, 255, 255, 0.2); /* contour discret */
 }
-
 /* ===== Panneau projet ===== */
 #project-panel {
   position: fixed;
