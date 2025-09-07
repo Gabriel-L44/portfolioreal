@@ -25,13 +25,15 @@ body {
 
 /* ===== Régions ===== */
 #portfolio-map path {
-  fill: transparent;      /* pas de remplissage visible */
-  stroke: transparent;    /* pas de contour */
-  stroke-width: 20;       /* assez large pour agrandir la hitbox */
+  fill: black;        /* invisible mais détectable pour drop-shadow */
+  opacity: 0;         /* totalement invisible */
+  stroke: transparent; 
+  stroke-width: 20;   /* hitbox large pour cliquer facilement */
   cursor: pointer;
   transition: filter 0.3s ease;
 }
 
+/* ===== Drop-shadow pour chaque région ===== */
 #ville:hover {
   filter: drop-shadow(0 0 8px #0ef3ff);
 }
