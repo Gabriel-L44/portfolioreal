@@ -30,22 +30,26 @@
 
       <!-- ✅ Filtre Glow -->
       <defs>
-        <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feFlood result="flood" flood-color="#0ef3ff" flood-opacity="1"/>
-          <feComposite in="flood" in2="SourceAlpha" operator="in" result="mask"/>
-          
-          <!-- Multiples halos -->
-          <feGaussianBlur in="mask" stdDeviation="4" result="blur1"/>
-          <feGaussianBlur in="mask" stdDeviation="10" result="blur2"/>
-          <feGaussianBlur in="mask" stdDeviation="20" result="blur3"/>
-          <feGaussianBlur in="mask" stdDeviation="40" result="blur4"/>
-
-          <!-- Fusion des couches -->
+        <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
+          <!-- Première couche de glow -->
+          <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur1"/>
           <feMerge>
             <feMergeNode in="blur1"/>
+            <feMergeNode in="blur1"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+
+          <!-- Deuxième couche plus large -->
+          <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2"/>
+          <feMerge>
             <feMergeNode in="blur2"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+
+          <!-- Troisième couche énorme pour l'aura -->
+          <feGaussianBlur in="SourceGraphic" stdDeviation="24" result="blur3"/>
+          <feMerge>
             <feMergeNode in="blur3"/>
-            <feMergeNode in="blur4"/>
             <feMergeNode in="SourceGraphic"/>
           </feMerge>
         </filter>
