@@ -8,30 +8,16 @@
 </head>
 <body>
   <div class="map-container">
-    <!-- ✅ Bouton retour -->
-    <button id="back-btn" class="hidden">⟵ Retour à la carte</button>
-
-    <svg
-      id="portfolio-map"
-      viewBox="0 0 406.39999 270.93332"
-      xmlns="http://www.w3.org/2000/svg">
-
-      <!-- ✅ Image de fond -->
-      <image href="map.png" x="0" y="0" width="406.39999" height="270.93332" />
-
-      <!-- ✅ Zones interactives -->
-      <g id="layer1" transform="translate(84.297913,-10.83959)">
-        <!-- Ville -->
-        <path id="ville" class="region" d="M 210.6,49.799999 C 214.2,55.8 ... z" />
-        <!-- Ruines -->
-        <path id="ruines" class="region" d="m -10.2,41.399999 ... z" />
-        <!-- Forêt -->
-        <path id="foret" class="region" d="m -10.8,239.4 ... z" />
-      </g>
+    <!-- Ici colle ton SVG inline -->
+    <svg id="portfolio-map" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" width="100%">
+      <!-- Exemple : remplacer par ton vrai contenu -->
+      <path id="village" d="M100,400 ...Z" class="region"/>
+      <path id="ruins" d="M600,200 ...Z" class="region"/>
+      <path id="city" d="M1200,500 ...Z" class="region"/>
     </svg>
   </div>
 
-  <!-- ✅ Panneau projets -->
+  <!-- Panneau projets -->
   <div id="project-panel" class="hidden">
     <button id="close-panel">✖</button>
     <h2 id="project-title">Titre</h2>
