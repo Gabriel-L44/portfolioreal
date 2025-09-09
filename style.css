@@ -1,55 +1,56 @@
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #1e1e1e;
-  color: white;
+const svg = document.getElementById("portfolio-map");
+const panel = document.getElementById("project-panel");
+const title = document.getElementById("project-title");
+const content = document.getElementById("project-content");
+const closeBtn = document.getElementById("close-panel");
+
+// Données projets par zone
+const projects = {
+  village: { title: "Village créatif", content: "<p>Mes projets web simples et artisanaux.</p>" },
+  ruins: { title: "Ruines antiques", content: "<p>Projets expérimentaux et archives.</p>" },
+  city: { title: "Ville futuriste", content: "<p>Projets modernes et technologiques.</p>" }
+};
+
+// Animation viewBox
+function zoomOnElement(el) {
+  const bbox = el.getBBox();
+  const padding = 100;
+  const x = bbox.x - padding;
+  const y = bbox.y - padding;
+  const w = bbox.width + 2 * padding;
+  const h = bbox.height + 2 * padding;
+
+  // animation simple (interpolation)
+  let start = svg.viewBox.baseVal.x;
+  let startY = svg.viewBox.baseVal.y;
+  let startW = svg.viewBox.baseVal.width;
+  let startH = svg.viewBox.baseVal.height;
+
+  let step = 0;
+  const duration = 20; // frames
+  function animate() {
+    step++;
+    const t = step / duration;
+    svg.setAttribute("viewBox", 
+      `${start + (x - start) * t} ${startY + (y - startY) * t} ${startW + (w - startW) * t} ${startH + (h - startH) * t}`);
+    if (step < duration) requestAnimationFrame(animate);
+  }
+  animate();
 }
 
-.map-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
+// Gestion click
+document.querySelectorAll(".region").forEach(region => {
+  region.addEventListener("click", () => {
+    const id = region.id;
+    zoomOnElement(region);
+    title.textContent = projects[id].title;
+    content.innerHTML = projects[id].content;
+    panel.classList.remove("hidden");
+  });
+});
 
-svg {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-.region {
-  fill: rgba(255,255,255,0.1);
-  stroke: #fff;
-  stroke-width: 2;
-  transition: all 0.3s ease;
-}
-
-.region:hover {
-  fill: rgba(0,200,255,0.3);
-  filter: drop-shadow(0 0 10px cyan);
-}
-
-#project-panel {
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  width: 300px;
-  background: rgba(20,20,20,0.9);
-  border: 2px solid cyan;
-  border-radius: 10px;
-  padding: 1em;
-  box-shadow: 0 0 15px cyan;
-}
-
-#project-panel.hidden {
-  display: none;
-}
-
-#close-panel {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.2em;
-  cursor: pointer;
-  float: right;
-}
+// Fermeture panneau
+closeBtn.addEventListener("click", () => {
+  panel.classList.add("hidden");
+  svg.setAttribute("viewBox", "0 0 1920 1080"); // reset
+});
