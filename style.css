@@ -1,125 +1,80 @@
-/* ===== Style global ===== */
 body {
   margin: 0;
+  overflow: hidden;
+  background: #1b1b1b;
   font-family: Arial, sans-serif;
-  background: #0e0e0e;
   color: #fff;
-  overflow-x: hidden;
 }
 
-/* ===== Conteneur de la carte ===== */
 .map-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   position: relative;
+  perspective: 1000px; /* utile pour parallaxe */
 }
 
-/* ===== SVG ===== */
-#portfolio-map {
+svg {
   width: 100%;
-  height: auto;
-  display: block;
-  cursor: pointer;
-}
-
-/* ===== Régions ===== */
-/* ===== Zones interactives du SVG ===== */
-#portfolio-map path {
-  fill: white;           /* nécessaire pour que le drop-shadow fonctionne */
-  fill-opacity: 0.01;    /* quasi invisible mais détectable */
-  stroke: transparent;   
-  stroke-width: 20;      /* hitbox large pour cliquer facilement */
-  cursor: pointer;
-  transition: filter 0.3s ease;
-}
-
-/* ===== Drop-shadow puissant pour chaque région ===== */
-#ville:hover {
-  filter: drop-shadow(0 0 15px #0ef3ff)
-          drop-shadow(0 0 25px #0ef3ff)
-          drop-shadow(0 0 40px #0ef3ff)
-          drop-shadow(0 0 55px #0ef3ff);
-}
-
-#ruines:hover {
-  filter: drop-shadow(0 0 15px #0ef3ff)
-          drop-shadow(0 0 25px #0ef3ff)
-          drop-shadow(0 0 40px #0ef3ff)
-          drop-shadow(0 0 55px #0ef3ff);
-}
-
-#foret:hover {
-  filter: drop-shadow(0 0 15px #0ef3ff)
-          drop-shadow(0 0 25px #0ef3ff)
-          drop-shadow(0 0 40px #0ef3ff)
-          drop-shadow(0 0 55px #0ef3ff);
-}
-
-
-/* ===== Panneau projet ===== */
-#project-panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 350px;
   height: 100%;
-  background: rgba(20, 20, 20, 0.95);
-  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.6);
-  transform: translateX(100%);
-  transition: transform 0.4s ease;
-  padding: 20px;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-origin: center center;
 }
 
-#project-panel.show {
-  transform: translateX(0);
-}
-
-#project-panel h2 {
-  margin-top: 0;
-  color: #0ef3ff;
-  font-size: 1.6em;
-  border-bottom: 1px solid #0ef3ff;
-  padding-bottom: 10px;
-}
-
-#project-panel p {
-  line-height: 1.5;
-  margin-top: 15px;
-  font-size: 0.95em;
-}
-
-/* ===== Bouton de fermeture ===== */
-#close-panel {
-  margin-top: auto;
-  padding: 10px 15px;
-  background: #0ef3ff;
-  color: #000;
-  border: none;
-  font-weight: bold;
+/* ✅ Survol interactif */
+.region {
   cursor: pointer;
-  border-radius: 4px;
-  transition: background 0.3s;
+  fill-opacity: 0;
+  stroke: none;
+  transition: filter 0.3s ease, fill-opacity 0.3s ease;
+}
+.region:hover {
+  fill: rgba(255, 255, 255, 0.1);
+  stroke: #fff;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 8px #fff);
 }
 
-#close-panel:hover {
-  background: #08c7d9;
+/* ✅ Bouton retour */
+#back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 15px;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 10;
+}
+#back-btn.hidden {
+  display: none;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  #project-panel {
-    width: 100%;
-    height: 50%;
-    bottom: 0;
-    top: auto;
-    transform: translateY(100%);
-  }
-
-  #project-panel.show {
-    transform: translateY(0);
-  }
+/* ✅ Panneau projet */
+#project-panel {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 300px;
+  background: rgba(0,0,0,0.85);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  z-index: 20;
+}
+#project-panel.hidden {
+  display: none;
+}
+#close-panel {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
 }
