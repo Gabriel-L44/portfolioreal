@@ -32,13 +32,12 @@ body {
 }
 
 #portfolio-map path:hover {
-  fill: rgba(255, 255, 255, 0.01); /* silhouette quasi invisible */
-  filter: drop-shadow(0 0 10px #0ef3ff)
-          drop-shadow(0 0 20px #0ef3ff)
-          drop-shadow(0 0 40px #0ef3ff)
-          drop-shadow(0 0 80px #0ef3ff)
+  fill: rgba(14, 243, 255, 0.6); /* 🔥 la zone se remplit de bleu lumineux */
+  filter: drop-shadow(0 0 15px #0ef3ff)
+          drop-shadow(0 0 30px #0ef3ff)
+          drop-shadow(0 0 60px #0ef3ff)
           drop-shadow(0 0 120px #0ef3ff)
-          brightness(2) contrast(1.5);
+          brightness(2.5) contrast(2);
 }
 
 /* ===== Panneau projet ===== */
