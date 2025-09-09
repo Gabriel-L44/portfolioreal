@@ -25,19 +25,15 @@ body {
 
 /* ===== Régions ===== */
 #portfolio-map path {
-  fill: rgba(255, 255, 255, 0.03); /* léger voile pour indiquer la zone */
-  stroke: none; /* pas de contour net */
+  fill: rgba(255, 255, 255, 0.02); /* fantôme discret */
+  stroke: none;
   cursor: pointer;
-  transition: fill 0.3s ease, filter 0.3s ease;
+  transition: filter 0.3s ease;
 }
 
 #portfolio-map path:hover {
-  fill: rgba(255, 255, 255, 0.01); /* on efface encore plus la forme */
-  filter: drop-shadow(0 0 15px #0ef3ff)
-          drop-shadow(0 0 40px #0ef3ff)
-          drop-shadow(0 0 80px #0ef3ff)
-          drop-shadow(0 0 160px #0ef3ff)
-          brightness(3) contrast(2); /* 🌟 max de glow */
+  fill: rgba(255, 255, 255, 0.01); /* quasi invisible */
+  filter: url(#neon-glow); /* 💡 applique le super glow */
 }
 
 /* ===== Panneau projet ===== */
