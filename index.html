@@ -5,17 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Map</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Effet hover sur les icônes */
-    .overlay-icon {
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .overlay-icon:hover {
-      transform: scale(1.2);
-      filter: drop-shadow(0 0 6px #0ef3ff);
-    }
-  </style>
 </head>
 <body>
   <div class="map-container">
@@ -25,49 +14,19 @@
       viewBox="0 0 406.39999 270.93332"
       xmlns="http://www.w3.org/2000/svg">
 
-      <!-- ✅ Filtre Glow -->
-      <defs>
-        <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur1"/>
-          <feMerge>
-            <feMergeNode in="blur1"/>
-            <feMergeNode in="blur1"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-          <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2"/>
-          <feMerge>
-            <feMergeNode in="blur2"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-          <feGaussianBlur in="SourceGraphic" stdDeviation="24" result="blur3"/>
-          <feMerge>
-            <feMergeNode in="blur3"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-
       <!-- ✅ Image de fond -->
       <image href="map.png" x="0" y="0" width="406.39999" height="270.93332" />
 
-      <!-- ✅ Icônes calques par-dessus -->
-      <image href="ville.png" x="300" y="80" width="30" height="30" class="overlay-icon"/> <!-- Ville -->
-      <image href="ruines.png" x="60" y="50" width="30" height="30" class="overlay-icon"/> <!-- Ruines -->
-      <image href="village.png" x="100" y="200" width="30" height="30" class="overlay-icon"/> <!-- Forêt -->
+      <!-- ✅ Icônes calques -->
+      <image href="ville.png" x="300" y="80" class="overlay-icon"/> <!-- Ville -->
+      <image href="ruines.png" x="60" y="50" class="overlay-icon"/> <!-- Ruines -->
+      <image href="village.png" x="100" y="200" class="overlay-icon"/> <!-- Forêt -->
 
       <!-- ✅ Zones interactives -->
       <g id="layer1" transform="translate(84.297913,-10.83959)">
-        <!-- Ville -->
-        <path id="ville" class="region"
-          d="M 210.6,49.799999 ... z" />
-
-        <!-- Ruines -->
-        <path id="ruines" class="region"
-          d="m -10.2,41.399999 ... z" />
-
-        <!-- Forêt -->
-        <path id="foret" class="region"
-          d="m -10.8,239.4 ... z" />
+        <path id="ville" class="region" d="M 210.6,49.799999 ... z" />
+        <path id="ruines" class="region" d="m -10.2,41.399999 ... z" />
+        <path id="foret" class="region" d="m -10.8,239.4 ... z" />
       </g>
     </svg>
   </div>
