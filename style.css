@@ -103,3 +103,17 @@ body {
     transform: translateY(0);
   }
 }
+
+/* ===== Icônes sur la carte ===== */
+.overlay-icon {
+  cursor: pointer;
+  transform: scale(1);              /* taille de base */
+  transform-origin: center center;  /* zoom depuis le centre */
+  transition: transform 0.3s ease;  /* smooth */
+}
+
+.overlay-icon:hover {
+  transform: scale(1.2);            /* zoom sur hover */
+  filter: drop-shadow(0 0 6px #0ef3ff);
+}
+
