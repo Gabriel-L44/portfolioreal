@@ -27,18 +27,25 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;   /* prend toute la taille de la map */
+  width: 100%;
   height: auto;
   transform-origin: center center;
   transition: transform 0.4s ease, filter 0.4s ease;
   cursor: pointer;
-  pointer-events: auto; /* clic actif */
+
+  /* 👇 permet de traverser les parties transparentes du PNG */
+  pointer-events: none;
 }
 
 .overlay-icon:hover {
-  transform: scale(1.05) translateY(-5px); /* zoom vers le haut */
+  transform: scale(1.05) translateY(-5px);
   filter: drop-shadow(0 0 20px #0ef3ff);
 }
+
+/* 👇 on remet pointer-events sur chaque image individuellement */
+.ville { pointer-events: auto; }
+.ruines { pointer-events: auto; }
+.village { pointer-events: auto; }
 
 /* ===== SVG zones ===== */
 #portfolio-map {
