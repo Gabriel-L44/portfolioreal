@@ -1,4 +1,4 @@
-/* ===== Style global ===== */
+/* ===== Variables & Global ===== */
 :root {
   --accent: #0ef3ff;
 }
@@ -16,70 +16,59 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  /* aspect-ratio faculative pour garder hauteur cohérente sur petites tailles */
   max-height: 90vh;
 }
 
-/* ===== SVG (responsive) ===== */
+/* ===== SVG ===== */
 #portfolio-map {
   display: block;
   width: 100%;
   height: auto;
-  /* s'assurer que les transforms CSS se font par rapport à la boîte de l'élément SVG */
 }
 
-/* ===== Image de fond : pas d'interaction ===== */
+/* ===== Image de fond ===== */
 .map-bg {
-  pointer-events: none; /* la map ne doit pas capter les événements */
+  pointer-events: none; /* La map ne doit pas capter les événements */
 }
 
-/* ===== Calques : wrapper + image (dans SVG) ===== */
+/* ===== Calques ===== */
 .overlay-wrapper {
-  /* le <g> permet d'avoir hover sur le groupe */
   cursor: pointer;
 }
 
-/* applique le transform sur l'image SVG (transform-box important pour SVG) */
 .overlay-image {
   transition: transform 0.36s cubic-bezier(.2,.9,.2,1), filter 0.36s;
-  transform-box: fill-box;       /* permet à transform-origin de se baser sur la boîte de l'image */
   transform-origin: 50% 50%;
-  /* pointer-events déjà défini dans le SVG (visiblePainted) */
   will-change: transform, filter;
+  pointer-events: visiblePainted; /* hover uniquement sur zones visibles */
 }
 
-/* Hover : zoom centré + translation vers le haut + halo */
+/* Hover effet sur les calques */
 .overlay-wrapper:hover .overlay-image {
-  transform: scale(1.08) translateY(-6px);
-  filter: drop-shadow(0 10px 24px rgba(14,243,255,0.25))
-          drop-shadow(0 0 40px rgba(14,243,255,0.18));
+  transform: scale(1.12) translateY(-8px);
+  filter: drop-shadow(0 10px 24px rgba(14,243,255,0.35))
+          drop-shadow(0 0 40px rgba(14,243,255,0.25));
 }
 
-/* plus fort si on veut un effet "pop" au clic (optionnel) */
 .overlay-wrapper:active .overlay-image {
-  transform: scale(1.03) translateY(-3px);
+  transform: scale(1.05) translateY(-4px);
   transition-duration: 140ms;
 }
 
-/* ===== Zones SVG (paths) ===== */
+/* ===== Zones SVG interactives ===== */
 .region {
   fill: rgba(255,255,255,0.05);
   stroke: var(--accent);
   stroke-width: 1;
   transition: fill .25s ease, stroke-width .25s ease, filter .25s ease;
-  pointer-events: visiblePainted; /* important: per-pixel sur les paths aussi */
+  pointer-events: visiblePainted;
   mix-blend-mode: screen;
 }
 
-/* Hover puissant : halo + remplissage */
 .region:hover {
-  fill: rgba(14,243,255,0.30);
+  fill: rgba(14,243,255,0.3);
   stroke-width: 3;
-  /* applique le filtre 'glow' défini dans le SVG (id="glow") */
   filter: url(#glow);
-  /* double shadow pour plus d'intensité */
-  /* fallback CSS shadow pour navigateurs qui ne prennent pas url(filter) */
-  /* (on combine pour un halo très visible) */
   box-shadow: 0 0 30px rgba(14,243,255,0.35);
 }
 
@@ -129,11 +118,16 @@ body {
   border-radius: 4px;
   transition: background 0.3s;
 }
-
 #close-panel:hover { background: #08c7d9; }
 
-/* ===== Responsive adjustments ===== */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-  #project-panel { width: 100%; height: 50%; bottom: 0; top: auto; transform: translateY(100%); }
+  #project-panel {
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    top: auto;
+    transform: translateY(100%);
+  }
   #project-panel.show { transform: translateY(0); }
 }
