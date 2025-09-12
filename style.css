@@ -38,21 +38,16 @@ body {
 
 .overlay-image {
   transition: transform 0.36s cubic-bezier(.2,.9,.2,1), filter 0.36s;
-  transform-origin: 50% 50%;
+  transform-origin: center center; /* zoom depuis le centre */
+  transform-box: fill-box;         /* important pour SVG <image> */
   will-change: transform, filter;
-  pointer-events: visiblePainted; /* hover uniquement sur zones visibles */
+  pointer-events: visiblePainted;
 }
 
-/* Hover effet sur les calques */
 .overlay-wrapper:hover .overlay-image {
-  transform: scale(1.12) translateY(-8px);
+  transform: scale(1.2) translateY(-6px); /* zoom + petit décalage vers le haut */
   filter: drop-shadow(0 10px 24px rgba(14,243,255,0.35))
           drop-shadow(0 0 40px rgba(14,243,255,0.25));
-}
-
-.overlay-wrapper:active .overlay-image {
-  transform: scale(1.05) translateY(-4px);
-  transition-duration: 140ms;
 }
 
 /* ===== Zones SVG interactives ===== */
