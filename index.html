@@ -8,21 +8,21 @@
 </head>
 <body>
   <div class="map-container">
+
+    <!-- ✅ Image de fond -->
+    <img src="map.png" alt="Carte" class="map-bg">
+
+    <!-- ✅ Calques (même taille que la map) -->
+    <img src="ville.png" alt="Ville" class="overlay-icon ville">
+    <img src="ruines.png" alt="Ruines" class="overlay-icon ruines">
+    <img src="village.png" alt="Village" class="overlay-icon village">
+
+    <!-- ✅ SVG zones interactives -->
     <svg
       id="portfolio-map"
-      width="100%"
       viewBox="0 0 406.39999 270.93332"
       xmlns="http://www.w3.org/2000/svg">
 
-      <!-- ✅ Image de fond -->
-      <image href="map.png" x="0" y="0" width="406.39999" height="270.93332" />
-
-      <!-- ✅ Icônes calques -->
-      <image href="ville.png" x="300" y="80" class="overlay-icon"/> <!-- Ville -->
-      <image href="ruines.png" x="60" y="50" class="overlay-icon"/> <!-- Ruines -->
-      <image href="village.png" x="100" y="200" class="overlay-icon"/> <!-- Forêt -->
-
-      <!-- ✅ Zones interactives -->
       <g id="layer1" transform="translate(84.297913,-10.83959)">
         <path id="ville" class="region" d="M 210.6,49.799999 ... z" />
         <path id="ruines" class="region" d="m -10.2,41.399999 ... z" />
