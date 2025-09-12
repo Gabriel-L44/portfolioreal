@@ -8,14 +8,13 @@
 </head>
 <body>
   <div class="map-container">
-    <!-- SVG responsive : la map et les calques sont dans le même SVG pour un hit-test par-pixel -->
     <svg id="portfolio-map"
-         viewBox="0 0 406.39999 270.93332"
+         viewBox="0 0 406.4 270.93"
          xmlns="http://www.w3.org/2000/svg"
          xmlns:xlink="http://www.w3.org/1999/xlink"
          preserveAspectRatio="xMidYMid meet">
 
-      <!-- defs : filtre glow pour le halo (optionnel mais puissant) -->
+      <!-- Effet glow -->
       <defs>
         <filter id="glow">
           <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
@@ -26,52 +25,56 @@
         </filter>
       </defs>
 
-      <!-- Image de fond (map) -->
+      <!-- Fond map -->
       <image class="map-bg"
-             xlink:href="map.png" href="map.png"
+             xlink:href="map.png"
+             href="map.png"
              x="0" y="0"
-             width="406.39999" height="270.93332"
+             width="406.4" height="270.93"
              preserveAspectRatio="xMidYMid meet"
              pointer-events="none" />
 
-      <!-- Zones SVG interactives (paths) -->
-      <g id="layer1" transform="translate(84.297913,-10.83959)">
-        <!-- remplace les d="..." par tes vrais path -->
-        <path id="ville-region" class="region" d="M 210.6,49.799999 ... z" />
-        <path id="ruines-region" class="region" d="m -10.2,41.399999 ... z" />
-        <path id="foret-region" class="region" d="m -10.8,239.4 ... z" />
+      <!-- Zones interactives -->
+      <g id="layer1" transform="translate(84.3,-10.84)">
+        <path id="ville-region" class="region" d="M 210.6,49.8 ... z" />
+        <path id="ruines-region" class="region" d="m -10.2,41.4 ... z" />
+        <path id="village-region" class="region" d="m -10.8,239.4 ... z" />
       </g>
 
-      <!-- === Calques : images superposées (même taille que la map) ===
-           IMPORTANT : pointer-events="visiblePainted" -> uniquement les pixels visibles captent l'événement -->
+      <!-- Calques images -->
       <g class="overlay-wrapper ville">
         <image class="overlay-image"
-               xlink:href="ville.png" href="ville.png"
-               x="0" y="0" width="406.39999" height="270.93332"
+               xlink:href="ville.png"
+               href="ville.png"
+               x="0" y="0"
+               width="406.4" height="270.93"
                preserveAspectRatio="xMidYMid meet"
                pointer-events="visiblePainted" />
       </g>
 
       <g class="overlay-wrapper ruines">
         <image class="overlay-image"
-               xlink:href="ruines.png" href="ruines.png"
-               x="0" y="0" width="406.39999" height="270.93332"
+               xlink:href="ruines.png"
+               href="ruines.png"
+               x="0" y="0"
+               width="406.4" height="270.93"
                preserveAspectRatio="xMidYMid meet"
                pointer-events="visiblePainted" />
       </g>
 
       <g class="overlay-wrapper village">
         <image class="overlay-image"
-               xlink:href="village.png" href="village.png"
-               x="0" y="0" width="406.39999" height="270.93332"
+               xlink:href="village.png"
+               href="village.png"
+               x="0" y="0"
+               width="406.4" height="270.93"
                preserveAspectRatio="xMidYMid meet"
                pointer-events="visiblePainted" />
       </g>
-
     </svg>
   </div>
 
-  <!-- panneau projets (inchangé) -->
+  <!-- Panneau projet -->
   <div id="project-panel" class="hidden">
     <button id="close-panel">✖</button>
     <h2 id="project-title">Titre</h2>
