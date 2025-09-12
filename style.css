@@ -7,7 +7,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== Conteneur de la carte ===== */
+/* ===== Conteneur ===== */
 .map-container {
   width: 100%;
   max-width: 1200px;
@@ -15,26 +15,53 @@ body {
   position: relative;
 }
 
-/* ===== SVG ===== */
-#portfolio-map {
+/* ===== Carte de fond ===== */
+.map-bg {
   width: 100%;
   height: auto;
   display: block;
-  cursor: pointer;
 }
 
-/* ===== Régions ===== */
-#portfolio-map path {
+/* ===== Calques images ===== */
+.overlay-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;   /* prend toute la taille de la map */
+  height: auto;
+  transform-origin: center center;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+  pointer-events: auto; /* clic actif */
+}
+
+.overlay-icon:hover {
+  transform: scale(1.05) translateY(-5px); /* zoom vers le haut */
+  filter: drop-shadow(0 0 20px #0ef3ff);
+}
+
+/* ===== SVG zones ===== */
+#portfolio-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;   /* calé sur la map */
+  height: 100%;
+  pointer-events: none; /* évite blocage hover images */
+}
+
+.region {
   fill: rgba(255, 255, 255, 0.05);
   stroke: #0ef3ff;
   stroke-width: 1;
-  transition: fill 0.3s, filter 0.3s, stroke-width 0.3s;
+  transition: fill 0.3s, stroke-width 0.3s, filter 0.3s;
+  pointer-events: all; /* réactive hover */
 }
 
-#portfolio-map path:hover {
-  fill: rgba(14, 243, 255, 0.15);
-  stroke-width: 2;
-  filter: drop-shadow(0 0 6px #0ef3ff);
+.region:hover {
+  fill: rgba(14, 243, 255, 0.25);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 15px #0ef3ff) drop-shadow(0 0 30px #0ef3ff);
 }
 
 /* ===== Panneau projet ===== */
@@ -103,17 +130,3 @@ body {
     transform: translateY(0);
   }
 }
-
-/* ===== Icônes sur la carte ===== */
-.overlay-icon {
-  cursor: pointer;
-  transform: scale(1);              /* taille de base */
-  transform-origin: center center;  /* zoom depuis le centre */
-  transition: transform 0.3s ease;  /* smooth */
-}
-
-.overlay-icon:hover {
-  transform: scale(1.2);            /* zoom sur hover */
-  filter: drop-shadow(0 0 6px #0ef3ff);
-}
-
