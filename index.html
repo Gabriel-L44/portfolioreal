@@ -1,37 +1,77 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Portfolio Map</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="map-container">
+    <!-- SVG responsive : la map et les calques sont dans le même SVG pour un hit-test par-pixel -->
+    <svg id="portfolio-map"
+         viewBox="0 0 406.39999 270.93332"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         preserveAspectRatio="xMidYMid meet">
 
-    <!-- ✅ Image de fond -->
-    <img src="map.png" alt="Carte" class="map-bg">
+      <!-- defs : filtre glow pour le halo (optionnel mais puissant) -->
+      <defs>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
 
-    <!-- ✅ Calques (même taille que la map) -->
-    <img src="ville.png" alt="Ville" class="overlay-icon ville">
-    <img src="ruines.png" alt="Ruines" class="overlay-icon ruines">
-    <img src="village.png" alt="Village" class="overlay-icon village">
+      <!-- Image de fond (map) -->
+      <image class="map-bg"
+             xlink:href="map.png" href="map.png"
+             x="0" y="0"
+             width="406.39999" height="270.93332"
+             preserveAspectRatio="xMidYMid meet"
+             pointer-events="none" />
 
-    <!-- ✅ SVG zones interactives -->
-    <svg
-      id="portfolio-map"
-      viewBox="0 0 406.39999 270.93332"
-      xmlns="http://www.w3.org/2000/svg">
-
+      <!-- Zones SVG interactives (paths) -->
       <g id="layer1" transform="translate(84.297913,-10.83959)">
-        <path id="ville" class="region" d="M 210.6,49.799999 ... z" />
-        <path id="ruines" class="region" d="m -10.2,41.399999 ... z" />
-        <path id="foret" class="region" d="m -10.8,239.4 ... z" />
+        <!-- remplace les d="..." par tes vrais path -->
+        <path id="ville-region" class="region" d="M 210.6,49.799999 ... z" />
+        <path id="ruines-region" class="region" d="m -10.2,41.399999 ... z" />
+        <path id="foret-region" class="region" d="m -10.8,239.4 ... z" />
       </g>
+
+      <!-- === Calques : images superposées (même taille que la map) ===
+           IMPORTANT : pointer-events="visiblePainted" -> uniquement les pixels visibles captent l'événement -->
+      <g class="overlay-wrapper ville">
+        <image class="overlay-image"
+               xlink:href="ville.png" href="ville.png"
+               x="0" y="0" width="406.39999" height="270.93332"
+               preserveAspectRatio="xMidYMid meet"
+               pointer-events="visiblePainted" />
+      </g>
+
+      <g class="overlay-wrapper ruines">
+        <image class="overlay-image"
+               xlink:href="ruines.png" href="ruines.png"
+               x="0" y="0" width="406.39999" height="270.93332"
+               preserveAspectRatio="xMidYMid meet"
+               pointer-events="visiblePainted" />
+      </g>
+
+      <g class="overlay-wrapper village">
+        <image class="overlay-image"
+               xlink:href="village.png" href="village.png"
+               x="0" y="0" width="406.39999" height="270.93332"
+               preserveAspectRatio="xMidYMid meet"
+               pointer-events="visiblePainted" />
+      </g>
+
     </svg>
   </div>
 
-  <!-- ✅ Panneau projets -->
+  <!-- panneau projets (inchangé) -->
   <div id="project-panel" class="hidden">
     <button id="close-panel">✖</button>
     <h2 id="project-title">Titre</h2>
