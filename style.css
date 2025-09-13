@@ -163,7 +163,7 @@ body {
 }
 .ruines:hover .slide-text {
   opacity: 1;
-  transform: translate(0, 60px) scale(1); /* glisse vers le bas */
+  transform: translate(0, 65px) scale(1); /* glisse vers le bas */
 }
 
 /* ===== Village : slide vers la droite, taille adaptée ===== */
@@ -173,7 +173,7 @@ body {
 }
 .village:hover .slide-text {
   opacity: 1;
-  transform: translate(145px, 0) scale(1); /* glisse vers la droite */
+  transform: translate(150px, 0) scale(1); /* glisse vers la droite */
 }
 
 
