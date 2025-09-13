@@ -14,6 +14,17 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          preserveAspectRatio="xMidYMid meet">
 
+      <!-- Effet glow -->
+      <defs>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
       <!-- Fond map -->
       <image class="map-bg"
              xlink:href="map.png"
@@ -23,39 +34,76 @@
              preserveAspectRatio="xMidYMid meet"
              pointer-events="none" />
 
-      <!-- Ville -->
-      <g class="overlay-wrapper ville" data-link="ville.html">
-        <image class="overlay-image"
-               xlink:href="ville.png"
-               href="ville.png"
-               x="230" y="36"
-               width="115" height="115"
-               preserveAspectRatio="xMidYMid meet"
-               pointer-events="visiblePainted" />
+      <!-- Zones interactives -->
+      <g id="layer1" transform="translate(84.3,-10.84)">
+        <path id="ville-region" class="region" d="M 210.6,49.8 ... z" />
+        <path id="ruines-region" class="region" d="m -10.2,41.4 ... z" />
+        <path id="village-region" class="region" d="m -10.8,239.4 ... z" />
       </g>
 
-      <!-- Ruines -->
-      <g class="overlay-wrapper ruines" data-link="ruines.html">
-        <image class="overlay-image"
-               xlink:href="ruines.png"
-               href="ruines.png"
-               x="42" y="12"
-               width="110" height="110"
-               preserveAspectRatio="xMidYMid meet"
-               pointer-events="visiblePainted" />
-      </g>
+      <!-- Calques images -->
+      <!-- Calque ville -->
+<g class="overlay-wrapper ville">
+  <image class="overlay-image"
+         xlink:href="ville.png"
+         href="ville.png"
+         x="230" y="36"
+         width="115" height="115" 
+         preserveAspectRatio="xMidYMid meet"
+         pointer-events="visiblePainted" />
+  <!-- Texte qui sort -->
+  <image class="slide-text"
+         xlink:href="text1.png"
+         href="text1.png"
+         x="223" y="70"
+         width="115" height="40"
+         preserveAspectRatio="xMidYMid meet"
+         pointer-events="none" />
+</g>
 
-      <!-- Village -->
-      <g class="overlay-wrapper village" data-link="village.html">
-        <image class="overlay-image"
-               xlink:href="village.png"
-               href="village.png"
-               x="46" y="129"
-               width="145" height="145"
-               preserveAspectRatio="xMidYMid meet"
-               pointer-events="visiblePainted" />
-      </g>
-    </svg>
+<!-- Calque ruines -->
+<g class="overlay-wrapper ruines">
+  <image class="overlay-image"
+         xlink:href="ruines.png"
+         href="ruines.png"
+         x="42" y="12"
+         width="110" height="110"
+         preserveAspectRatio="xMidYMid meet"
+         pointer-events="visiblePainted" />
+<image class="slide-text"
+         xlink:href="text2.png"
+         href="text2.png"
+         x="57" y="50"
+         width="110" height="40"
+         preserveAspectRatio="xMidYMid meet"
+         pointer-events="none" />
+</g>
+
+<!-- Calque village -->
+<g class="overlay-wrapper village">
+  <image class="overlay-image"
+         xlink:href="village.png"
+         href="village.png"
+         x="46" y="129"
+         width="145" height="145"
+         preserveAspectRatio="xMidYMid meet"
+         pointer-events="visiblePainted" />
+ <image class="slide-text"
+         xlink:href="text3.png"
+         href="text3.png"
+         x="46" y="185"
+         width="145" height="40"
+         preserveAspectRatio="xMidYMid meet"
+         pointer-events="none" />
+</g>
+
+  <!-- Panneau projet -->
+  <div id="project-panel" class="hidden">
+    <button id="close-panel">✖</button>
+    <h2 id="project-title">Titre</h2>
+    <div id="project-content">
+      <p>Texte ou images de tes projets…</p>
+    </div>
   </div>
 
   <script src="script.js"></script>
