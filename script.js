@@ -3,6 +3,28 @@ const panel = document.getElementById("project-panel");
 const title = document.getElementById("project-title");
 const content = document.getElementById("project-content");
 const closeBtn = document.getElementById("close-panel");
+const pages = document.querySelectorAll(".project-page");
+const backBtns = document.querySelectorAll(".back-btn");
+
+// Quand on clique sur une zone
+svg.querySelectorAll(".region").forEach(region => {
+  region.addEventListener("click", () => {
+    const id = region.id;
+    const page = document.getElementById("page-" + id);
+    if (page) {
+      document.querySelector(".map-container").classList.add("hidden");
+      page.classList.remove("hidden");
+    }
+  });
+});
+
+// Boutons retour
+backBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    pages.forEach(p => p.classList.add("hidden"));
+    document.querySelector(".map-container").classList.remove("hidden");
+  });
+});
 
 // Données projets par zone (adapter les textes à ton portfolio)
 const projects = {
