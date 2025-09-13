@@ -3,41 +3,19 @@ const panel = document.getElementById("project-panel");
 const title = document.getElementById("project-title");
 const content = document.getElementById("project-content");
 const closeBtn = document.getElementById("close-panel");
-const pages = document.querySelectorAll(".project-page");
-const backBtns = document.querySelectorAll(".back-btn");
-
-// Quand on clique sur une zone
-svg.querySelectorAll(".region").forEach(region => {
-  region.addEventListener("click", () => {
-    const id = region.id;
-    const page = document.getElementById("page-" + id);
-    if (page) {
-      document.querySelector(".map-container").classList.add("hidden");
-      page.classList.remove("hidden");
-    }
-  });
-});
-
-// Boutons retour
-backBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    pages.forEach(p => p.classList.add("hidden"));
-    document.querySelector(".map-container").classList.remove("hidden");
-  });
-});
 
 // Données projets par zone (adapter les textes à ton portfolio)
 const projects = {
-  ville: { 
+  "ville-region": { 
     title: "Ville futuriste", 
     content: "<p>Projets modernes et technologiques.</p>" 
   },
-  ruines: { 
+  "ruines-region": { 
     title: "Ruines antiques", 
     content: "<p>Projets expérimentaux et archives.</p>" 
   },
-  foret: { 
-    title: "Forêt créative", 
+  "village-region": { 
+    title: "Village créatif", 
     content: "<p>Mes projets artistiques et immersifs.</p>" 
   }
 };
@@ -45,13 +23,12 @@ const projects = {
 // Fonction d’animation du zoom
 function zoomOnElement(el) {
   const bbox = el.getBBox();
-  const padding = 20; // Ajuste selon rendu
+  const padding = 20; 
   const x = bbox.x - padding;
   const y = bbox.y - padding;
   const w = bbox.width + 2 * padding;
   const h = bbox.height + 2 * padding;
 
-  // valeurs actuelles
   let startX = svg.viewBox.baseVal.x;
   let startY = svg.viewBox.baseVal.y;
   let startW = svg.viewBox.baseVal.width;
@@ -61,7 +38,7 @@ function zoomOnElement(el) {
   const duration = 30; // frames
   function animate() {
     step++;
-    const t = step / duration; // progression 0 → 1
+    const t = step / duration;
     svg.setAttribute(
       "viewBox",
       `${startX + (x - startX) * t} 
@@ -75,20 +52,20 @@ function zoomOnElement(el) {
 }
 
 // Gestion du click sur les régions
-svg.querySelectorAll("path").forEach(region => {
+svg.querySelectorAll(".region").forEach(region => {
   region.addEventListener("click", () => {
     const id = region.id;
     if (projects[id]) {
       zoomOnElement(region);
       title.textContent = projects[id].title;
       content.innerHTML = projects[id].content;
-      panel.classList.remove("hidden");
+      panel.classList.add("show");
     }
   });
 });
 
 // Fermeture panneau + reset zoom
 closeBtn.addEventListener("click", () => {
-  panel.classList.add("hidden");
-  svg.setAttribute("viewBox", "0 0 406.4 270.93"); // Reset viewBox à la taille de ton SVG
+  panel.classList.remove("show");
+  svg.setAttribute("viewBox", "0 0 406.4 270.93"); // Reset viewBox
 });
