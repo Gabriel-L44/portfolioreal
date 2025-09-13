@@ -51,7 +51,6 @@
                width="115" height="115" 
                preserveAspectRatio="xMidYMid meet"
                pointer-events="visiblePainted" />
-        <!-- Texte qui sort -->
         <image class="slide-text"
                xlink:href="text1.png"
                href="text1.png"
@@ -99,24 +98,51 @@
     </svg>
   </div>
 
-  <!-- Panneau projet -->
+  <!-- Containers projets -->
   <div id="project-panel" class="hidden">
     <button id="close-panel">✖</button>
-    <h2 id="project-title">Titre</h2>
-    <div id="project-content">
-      <!-- Exemple de contenu Ville -->
+
+    <!-- Ville -->
+    <div id="ville-container" class="project-container hidden">
+      <h2>Ville futuriste</h2>
       <div class="projects">
-        <div class="project-card">
-          <h2>Projet 1</h2>
-          <p>Résumé du projet 1. Un texte court pour expliquer l’idée.</p>
+        <div class="project-card ville-card">
+          <h3>Projet 1</h3>
+          <p>Résumé futuriste 1.</p>
         </div>
-        <div class="project-card">
-          <h2>Projet 2</h2>
-          <p>Résumé du projet 2. Présentation rapide du contenu.</p>
+        <div class="project-card ville-card">
+          <h3>Projet 2</h3>
+          <p>Résumé futuriste 2.</p>
         </div>
-        <div class="project-card">
-          <h2>Projet 3</h2>
-          <p>Résumé du projet 3. Quelques mots pour donner envie.</p>
+      </div>
+    </div>
+
+    <!-- Ruines -->
+    <div id="ruines-container" class="project-container hidden">
+      <h2>Ruines antiques</h2>
+      <div class="projects">
+        <div class="project-card ruines-card">
+          <h3>Projet 1</h3>
+          <p>Résumé ruines 1.</p>
+        </div>
+        <div class="project-card ruines-card">
+          <h3>Projet 2</h3>
+          <p>Résumé ruines 2.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Village -->
+    <div id="village-container" class="project-container hidden">
+      <h2>Village ancien</h2>
+      <div class="projects">
+        <div class="project-card village-card">
+          <h3>Projet 1</h3>
+          <p>Résumé village 1.</p>
+        </div>
+        <div class="project-card village-card">
+          <h3>Projet 2</h3>
+          <p>Résumé village 2.</p>
         </div>
       </div>
     </div>
@@ -125,4 +151,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
