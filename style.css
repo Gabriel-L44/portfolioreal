@@ -176,4 +176,74 @@ body {
   transform: translate(150px, 0) scale(1); /* glisse vers la droite */
 }
 
+.hidden {
+  display: none;
+}
+
+#project-panel {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  background: rgba(10,10,20,0.95);
+  border: 2px solid #0ef3ff;
+  border-radius: 15px;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+#close-panel {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Structure */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+.project-card {
+  flex: 1 1 calc(45% - 10px);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* Ville futuriste */
+.ville-card {
+  background: linear-gradient(145deg, #0ef3ff22, #7a00ff22);
+  border: 1px solid #0ef3ff;
+  color: #b3faff;
+  text-shadow: 0 0 5px #0ef3ff;
+}
+
+/* Ruines */
+.ruines-card {
+  background: linear-gradient(145deg, #d9c7a422, #0096a622);
+  border: 1px dashed #cbbf9b;
+  color: #e6e0d4;
+  transform: rotate(-1deg);
+}
+
+/* Village */
+.village-card {
+  background: linear-gradient(145deg, #4b3b1c22, #2e6e2e22);
+  border: 1px solid #5c4520;
+  color: #e4d9c1;
+  font-family: "Georgia", serif;
+}
+
+
 
