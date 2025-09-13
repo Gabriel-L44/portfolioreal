@@ -148,8 +148,8 @@ body {
 
 /* ===== Ville : slide vers le bas, taille adaptée ===== */
 .ville .slide-text {
-  width: 100px;   /* ajuster selon l'image */
-  height: 30px;
+  width: 130px;   /* ajuster selon l'image */
+  height: 50px;
 }
 .ville:hover .slide-text {
   opacity: 1;
@@ -158,8 +158,8 @@ body {
 
 /* ===== Ruines : slide vers le bas, taille différente ===== */
 .ruines .slide-text {
-  width: 120px;   /* ajuster selon l'image */
-  height: 35px;
+  width: 90px;   /* ajuster selon l'image */
+  height: 25px;
 }
 .ruines:hover .slide-text {
   opacity: 1;
@@ -173,7 +173,7 @@ body {
 }
 .village:hover .slide-text {
   opacity: 1;
-  transform: translate(130px, 0) scale(1); /* glisse vers la droite */
+  transform: translate(145px, 0) scale(1); /* glisse vers la droite */
 }
 
 
