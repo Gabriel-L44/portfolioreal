@@ -42,70 +42,87 @@
       </g>
 
       <!-- Calques images -->
-      <!-- Calque ville -->
-<g class="overlay-wrapper ville">
-  <image class="overlay-image"
-         xlink:href="ville.png"
-         href="ville.png"
-         x="230" y="36"
-         width="115" height="115" 
-         preserveAspectRatio="xMidYMid meet"
-         pointer-events="visiblePainted" />
-  <!-- Texte qui sort -->
-  <image class="slide-text"
-         xlink:href="text1.png"
-         href="text1.png"
-         x="223" y="70"
-         width="115" height="40"
-         preserveAspectRatio="xMidYMid meet"
-         pointer-events="none" />
-</g>
+      <!-- Ville -->
+      <g class="overlay-wrapper ville">
+        <image class="overlay-image"
+               xlink:href="ville.png"
+               href="ville.png"
+               x="230" y="36"
+               width="115" height="115" 
+               preserveAspectRatio="xMidYMid meet"
+               pointer-events="visiblePainted" />
+        <!-- Texte qui sort -->
+        <image class="slide-text"
+               xlink:href="text1.png"
+               href="text1.png"
+               x="223" y="70"
+               width="115" height="40"
+               preserveAspectRatio="xMidYMid meet"
+               pointer-events="none" />
+      </g>
 
-<!-- Calque ruines -->
-<g class="overlay-wrapper ruines">
-  <image class="overlay-image"
-         xlink:href="ruines.png"
-         href="ruines.png"
-         x="42" y="12"
-         width="110" height="110"
-         preserveAspectRatio="xMidYMid meet"
-         pointer-events="visiblePainted" />
-<image class="slide-text"
-         xlink:href="text2.png"
-         href="text2.png"
-         x="57" y="50"
-         width="110" height="40"
-         preserveAspectRatio="xMidYMid meet"
-         pointer-events="none" />
-</g>
+      <!-- Ruines -->
+      <g class="overlay-wrapper ruines">
+        <image class="overlay-image"
+               xlink:href="ruines.png"
+               href="ruines.png"
+               x="42" y="12"
+               width="110" height="110"
+               preserveAspectRatio="xMidYMid meet"
+               pointer-events="visiblePainted" />
+        <image class="slide-text"
+               xlink:href="text2.png"
+               href="text2.png"
+               x="57" y="50"
+               width="110" height="40"
+               preserveAspectRatio="xMidYMid meet"
+               pointer-events="none" />
+      </g>
 
-<!-- Calque village -->
-<g class="overlay-wrapper village">
-  <image class="overlay-image"
-         xlink:href="village.png"
-         href="village.png"
-         x="46" y="129"
-         width="145" height="145"
-         preserveAspectRatio="xMidYMid meet"
-         pointer-events="visiblePainted" />
- <image class="slide-text"
-         xlink:href="text3.png"
-         href="text3.png"
-         x="46" y="185"
-         width="145" height="40"
-         preserveAspectRatio="xMidYMid meet"
-         pointer-events="none" />
-</g>
+      <!-- Village -->
+      <g class="overlay-wrapper village">
+        <image class="overlay-image"
+               xlink:href="village.png"
+               href="village.png"
+               x="46" y="129"
+               width="145" height="145"
+               preserveAspectRatio="xMidYMid meet"
+               pointer-events="visiblePainted" />
+        <image class="slide-text"
+               xlink:href="text3.png"
+               href="text3.png"
+               x="46" y="185"
+               width="145" height="40"
+               preserveAspectRatio="xMidYMid meet"
+               pointer-events="none" />
+      </g>
+    </svg>
+  </div>
 
   <!-- Panneau projet -->
   <div id="project-panel" class="hidden">
     <button id="close-panel">✖</button>
     <h2 id="project-title">Titre</h2>
     <div id="project-content">
-      <p>Texte ou images de tes projets…</p>
+      <!-- Exemple de contenu Ville -->
+      <div class="projects">
+        <div class="project-card">
+          <h2>Projet 1</h2>
+          <p>Résumé du projet 1. Un texte court pour expliquer l’idée.</p>
+        </div>
+        <div class="project-card">
+          <h2>Projet 2</h2>
+          <p>Résumé du projet 2. Présentation rapide du contenu.</p>
+        </div>
+        <div class="project-card">
+          <h2>Projet 3</h2>
+          <p>Résumé du projet 3. Quelques mots pour donner envie.</p>
+        </div>
+      </div>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
