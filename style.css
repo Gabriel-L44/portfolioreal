@@ -126,3 +126,31 @@ body {
   }
   #project-panel.show { transform: translateY(0); }
 }
+/* Texte caché au départ */
+.slide-text {
+  opacity: 0;
+  transform: translate(0,0) scale(0.5);
+  transform-box: fill-box;  /* nécessaire en SVG */
+  transform-origin: center center;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  pointer-events: none;
+}
+
+/* Ville : slide vers la droite */
+.ville:hover .slide-text {
+  opacity: 1;
+  transform: translate(80px, 0) scale(1);
+}
+
+/* Ruines : slide vers le haut */
+.ruines:hover .slide-text {
+  opacity: 1;
+  transform: translate(0, -80px) scale(1);
+}
+
+/* Village : slide vers la gauche */
+.village:hover .slide-text {
+  opacity: 1;
+  transform: translate(-80px, 0) scale(1);
+}
+
