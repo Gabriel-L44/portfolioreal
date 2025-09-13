@@ -1,51 +1,21 @@
-const svg = document.getElementById("portfolio-map"); 
-const panel = document.getElementById("project-panel");
-const title = document.getElementById("project-title");
-const content = document.getElementById("project-content");
-const closeBtn = document.getElementById("close-panel");
+const svg = document.getElementById("portfolio-map");
 
-// Données projets par zone
-const projects = {
-  "ville-region": { 
-    title: "Ville futuriste", 
-    cards: [
-      { titre: "Projet 1", resume: "Un résumé rapide du projet 1 dans la ville." },
-      { titre: "Projet 2", resume: "Présentation du projet 2 avec style high-tech." },
-      { titre: "Projet 3", resume: "Petit aperçu du projet 3 dans cet univers urbain." }
-    ]
-  },
-  "ruines-region": { 
-    title: "Ruines antiques", 
-    cards: [
-      { titre: "Projet 1", resume: "Exploration des ruines et projet archéologique." },
-      { titre: "Projet 2", resume: "Reconstitution 3D d’un site ancien." }
-    ]
-  },
-  "village-region": { 
-    title: "Village ancien", 
-    cards: [
-      { titre: "Projet 1", resume: "Vie quotidienne dans le village à travers le projet." },
-      { titre: "Projet 2", resume: "Architecture traditionnelle et design visuel." },
-      { titre: "Projet 3", resume: "Histoire racontée par des images interactives." }
-    ]
-  }
+// Containers spécifiques
+const villeC = document.getElementById("ville-container");
+const ruinesC = document.getElementById("ruines-container");
+const villageC = document.getElementById("village-container");
+
+// Boutons de fermeture
+const closeBtns = document.querySelectorAll(".close-panel");
+
+// Associe chaque région avec son container
+const regionToContainer = {
+  "ville-region": villeC,
+  "ruines-region": ruinesC,
+  "village-region": villageC
 };
 
-// Génère les cartes projets
-function generateCards(cards) {
-  return `
-    <div class="projects">
-      ${cards.map(c => `
-        <div class="project-card">
-          <h2>${c.titre}</h2>
-          <p>${c.resume}</p>
-        </div>
-      `).join("")}
-    </div>
-  `;
-}
-
-// Animation de zoom
+// Fonction d’animation du zoom
 function zoomOnElement(el) {
   const bbox = el.getBBox();
   const padding = 20;
@@ -61,6 +31,7 @@ function zoomOnElement(el) {
 
   let step = 0;
   const duration = 30;
+
   function animate() {
     step++;
     const t = step / duration;
@@ -76,21 +47,27 @@ function zoomOnElement(el) {
   animate();
 }
 
-// Clic sur les régions
+// Gestion du clic sur les régions
 svg.querySelectorAll("path").forEach(region => {
   region.addEventListener("click", () => {
     const id = region.id;
-    if (projects[id]) {
+
+    // Ferme tous les containers avant d’ouvrir le bon
+    villeC.classList.add("hidden");
+    ruinesC.classList.add("hidden");
+    villageC.classList.add("hidden");
+
+    if (regionToContainer[id]) {
       zoomOnElement(region);
-      title.textContent = projects[id].title;
-      content.innerHTML = generateCards(projects[id].cards);
-      panel.classList.remove("hidden");
+      regionToContainer[id].classList.remove("hidden");
     }
   });
 });
 
-// Fermeture + reset zoom
-closeBtn.addEventListener("click", () => {
-  panel.classList.add("hidden");
-  svg.setAttribute("viewBox", "0 0 406.4 270.93"); 
+// Gestion des fermetures
+closeBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.parentElement.classList.add("hidden");
+    svg.setAttribute("viewBox", "0 0 406.4 270.93"); // Reset zoom
+  });
 });
