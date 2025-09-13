@@ -14,17 +14,6 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          preserveAspectRatio="xMidYMid meet">
 
-      <!-- Effet glow -->
-      <defs>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
-          <feMerge>
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-
       <!-- Fond map -->
       <image class="map-bg"
              xlink:href="map.png"
@@ -34,34 +23,19 @@
              preserveAspectRatio="xMidYMid meet"
              pointer-events="none" />
 
-      <!-- Zones interactives -->
-      <g id="layer1" transform="translate(84.3,-10.84)">
-        <path id="ville-region" class="region" d="M 210.6,49.8 ... z" />
-        <path id="ruines-region" class="region" d="m -10.2,41.4 ... z" />
-        <path id="village-region" class="region" d="m -10.8,239.4 ... z" />
-      </g>
-
-      <!-- Calques images -->
       <!-- Ville -->
-      <g class="overlay-wrapper ville">
+      <g class="overlay-wrapper ville" data-link="ville.html">
         <image class="overlay-image"
                xlink:href="ville.png"
                href="ville.png"
                x="230" y="36"
-               width="115" height="115" 
+               width="115" height="115"
                preserveAspectRatio="xMidYMid meet"
                pointer-events="visiblePainted" />
-        <image class="slide-text"
-               xlink:href="text1.png"
-               href="text1.png"
-               x="223" y="70"
-               width="115" height="40"
-               preserveAspectRatio="xMidYMid meet"
-               pointer-events="none" />
       </g>
 
       <!-- Ruines -->
-      <g class="overlay-wrapper ruines">
+      <g class="overlay-wrapper ruines" data-link="ruines.html">
         <image class="overlay-image"
                xlink:href="ruines.png"
                href="ruines.png"
@@ -69,17 +43,10 @@
                width="110" height="110"
                preserveAspectRatio="xMidYMid meet"
                pointer-events="visiblePainted" />
-        <image class="slide-text"
-               xlink:href="text2.png"
-               href="text2.png"
-               x="57" y="50"
-               width="110" height="40"
-               preserveAspectRatio="xMidYMid meet"
-               pointer-events="none" />
       </g>
 
       <!-- Village -->
-      <g class="overlay-wrapper village">
+      <g class="overlay-wrapper village" data-link="village.html">
         <image class="overlay-image"
                xlink:href="village.png"
                href="village.png"
@@ -87,65 +54,8 @@
                width="145" height="145"
                preserveAspectRatio="xMidYMid meet"
                pointer-events="visiblePainted" />
-        <image class="slide-text"
-               xlink:href="text3.png"
-               href="text3.png"
-               x="46" y="185"
-               width="145" height="40"
-               preserveAspectRatio="xMidYMid meet"
-               pointer-events="none" />
       </g>
     </svg>
-  </div>
-
-  <!-- Containers projets -->
-  <div id="project-panel" class="hidden">
-    <button id="close-panel">✖</button>
-
-    <!-- Ville -->
-    <div id="ville-container" class="project-container hidden">
-      <h2>Ville futuriste</h2>
-      <div class="projects">
-        <div class="project-card ville-card">
-          <h3>Projet 1</h3>
-          <p>Résumé futuriste 1.</p>
-        </div>
-        <div class="project-card ville-card">
-          <h3>Projet 2</h3>
-          <p>Résumé futuriste 2.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Ruines -->
-    <div id="ruines-container" class="project-container hidden">
-      <h2>Ruines antiques</h2>
-      <div class="projects">
-        <div class="project-card ruines-card">
-          <h3>Projet 1</h3>
-          <p>Résumé ruines 1.</p>
-        </div>
-        <div class="project-card ruines-card">
-          <h3>Projet 2</h3>
-          <p>Résumé ruines 2.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Village -->
-    <div id="village-container" class="project-container hidden">
-      <h2>Village ancien</h2>
-      <div class="projects">
-        <div class="project-card village-card">
-          <h3>Projet 1</h3>
-          <p>Résumé village 1.</p>
-        </div>
-        <div class="project-card village-card">
-          <h3>Projet 2</h3>
-          <p>Résumé village 2.</p>
-        </div>
-      </div>
-    </div>
   </div>
 
   <script src="script.js"></script>
