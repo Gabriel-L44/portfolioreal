@@ -158,8 +158,8 @@ body {
 
 /* ===== Ruines : slide vers le bas, taille différente ===== */
 .ruines .slide-text {
-  width: 85px;   /* ajuster selon l'image */
-  height: 23px;
+  width: 82px;   /* ajuster selon l'image */
+  height: 21px;
 }
 .ruines:hover .slide-text {
   opacity: 1;
