@@ -126,86 +126,76 @@ h2 {
   font-size: 2em;
 }
 
-/* ===== Page projet ===== */
 .project-page {
-  position: relative;
-  min-height: 100vh;
-  padding: 60px 20px 100px; /* haut / côtés / bas (pour bouton) */
-  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none; /* caché par défaut */
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
+  z-index: 100; /* au-dessus de la map */
+  color: white;
+  text-align: center;
 }
 
-/* Fond plein écran */
+.project-page.show {
+  display: flex; /* devient visible quand on l’active */
+}
+
 .page-bg {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.4); /* assombrit pour que le texte ressorte */
-  z-index: 0;
+  filter: brightness(0.5); /* petit effet pour mieux lire le texte */
+  z-index: -1;
 }
 
-/* contenu au-dessus du fond */
-.project-page > *:not(.page-bg) {
-  position: relative;
-  z-index: 1;
-}
-
-/* ===== Titre ===== */
-.project-page h2 {
-  margin-bottom: 40px;
-  font-size: 2.5em;
-  text-align: center;
-  color: var(--accent);
-}
-
-/* ===== Grille ===== */
 .grid {
   display: flex;
-  gap: 80px; /* espace entre colonnes */
-  justify-content: center;
-  margin-bottom: auto; /* pousse le bouton en bas */
+  justify-content: space-between;
+  width: 80%;
+  margin: 2rem auto;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
 }
 
-/* ===== Cartes ===== */
+.column.left {
+  align-items: flex-start;
+}
+
+.column.right {
+  align-items: flex-end;
+}
+
 .card {
-  background: rgba(51, 51, 51, 0.8);
-  border: 2px solid #666;
-  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 1rem 2rem;
   border-radius: 10px;
-  transition: transform 0.2s, background 0.3s;
-  text-align: center;
-}
-.card:hover {
-  background: rgba(85, 85, 85, 0.9);
-  transform: scale(1.05);
 }
 
-/* ===== Bouton retour ===== */
 .back-btn {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  align-self: center;
-  background: #444;
-  color: #fff;
+  margin-top: auto;
+  padding: 0.8rem 1.5rem;
+  background: #222;
+  color: white;
   border: none;
-  padding: 12px 24px;
-  cursor: pointer;
   border-radius: 8px;
-  font-size: 1.1em;
+  cursor: pointer;
 }
+
 .back-btn:hover {
-  background: #666;
+  background: #444;
 }
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
