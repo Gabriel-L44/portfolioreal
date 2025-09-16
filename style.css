@@ -121,53 +121,90 @@ body {
   display: none;
 }
 
-.project-page {
-  padding: 20px;
-}
-
-.back-btn {
-  background: #444;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-.back-btn:hover {
-  background: #666;
-}
-
 h2 {
   margin-bottom: 20px;
   font-size: 2em;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  max-width: 800px;
-  margin: auto;
+/* ===== Page projet ===== */
+.project-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 60px 20px 100px; /* haut / côtés / bas (pour bouton) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
+/* Fond plein écran */
+.page-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4); /* assombrit pour que le texte ressorte */
+  z-index: 0;
+}
+
+/* contenu au-dessus du fond */
+.project-page > *:not(.page-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Titre ===== */
+.project-page h2 {
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  text-align: center;
+  color: var(--accent);
+}
+
+/* ===== Grille ===== */
+.grid {
+  display: flex;
+  gap: 80px; /* espace entre colonnes */
+  justify-content: center;
+  margin-bottom: auto; /* pousse le bouton en bas */
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== Cartes ===== */
 .card {
-  background: #333;
+  background: rgba(51, 51, 51, 0.8);
   border: 2px solid #666;
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.2s, background 0.3s;
+  text-align: center;
 }
-
 .card:hover {
-  background: #555;
+  background: rgba(85, 85, 85, 0.9);
   transform: scale(1.05);
 }
 
-.project-page {
-  padding: 20px;
-  animation: fadeIn 0.4s ease;
+/* ===== Bouton retour ===== */
+.back-btn {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  align-self: center;
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1.1em;
+}
+.back-btn:hover {
+  background: #666;
 }
 
 @keyframes fadeIn {
