@@ -179,7 +179,7 @@ h2 {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.2s, background 0.3s;
-  width: 200px;       /* largeur fixe (moyenne) */
+  width: 300px;       /* largeur fixe (moyenne) */
   justify-self: center; /* centre la card dans sa colonne */
 }
 
