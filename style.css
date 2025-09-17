@@ -122,15 +122,15 @@ body {
 }
 
 #page-ville {
-  background: url("images/ville-futuriste.png") center/cover no-repeat;
+  background: url("ville-futuristefond.png") center/cover no-repeat;
 }
 
 #page-ruines {
-  background: url("images/ruines.png") center/cover no-repeat;
+  background: url("ruinesfond.png") center/cover no-repeat;
 }
 
 #page-village {
-  background: url("images/village.png") center/cover no-repeat;
+  background: url("villagefond.png") center/cover no-repeat;
 }
 
 /* Optionnel : assombrir un peu pour mieux lire le texte */
