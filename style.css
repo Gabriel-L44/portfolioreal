@@ -26,7 +26,7 @@ body {
   height: auto;
 }
 
-/* ===== Image de fond ===== */
+/* ===== Image de fond de la map ===== */
 .map-bg {
   pointer-events: none; /* La map ne doit pas capter les événements */
 }
@@ -67,17 +67,7 @@ body {
   box-shadow: 0 0 30px rgba(14,243,255,0.35);
 }
 
-/* Texte caché au départ */
-.slide-text {
-  opacity: 0;
-  transform: translate(0,0) scale(0.5);
-  transform-box: fill-box;  /* nécessaire en SVG */
-  transform-origin: center center;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  pointer-events: none;
-}
-
-/* Texte caché au départ */
+/* ===== Texte caché au départ ===== */
 .slide-text {
   opacity: 0;
   transform: translate(0,0) scale(0.5);
@@ -89,51 +79,50 @@ body {
 
 /* ===== Ville : slide vers le bas, taille adaptée ===== */
 .ville .slide-text {
-  width: 140px;   /* ajuster selon l'image */
+  width: 140px;
   height: 60px;
 }
 .ville:hover .slide-text {
   opacity: 1;
-  transform: translate(0, 70px) scale(1); /* glisse vers le bas */
+  transform: translate(0, 70px) scale(1);
 }
 
 /* ===== Ruines : slide vers le bas, taille différente ===== */
 .ruines .slide-text {
-  width: 82px;   /* ajuster selon l'image */
+  width: 82px;
   height: 21px;
 }
 .ruines:hover .slide-text {
   opacity: 1;
-  transform: translate(0, 65px) scale(1); /* glisse vers le bas */
+  transform: translate(0, 65px) scale(1);
 }
 
 /* ===== Village : slide vers la droite, taille adaptée ===== */
 .village .slide-text {
-  width: 110px;   /* ajuster selon l'image */
+  width: 110px;
   height: 32px;
 }
 .village:hover .slide-text {
   opacity: 1;
-  transform: translate(150px, 0) scale(1); /* glisse vers la droite */
+  transform: translate(150px, 0) scale(1);
 }
 
+/* ===== Pages projets ===== */
 .hidden {
   display: none;
 }
 
-#page-ville {
-  background: url("ville-futuristefond.png") center/cover no-repeat;
+/* Nouveau fond via <img> */
+.page-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* reste derrière le contenu */
 }
 
-#page-ruines {
-  background: url("ruinesfond.png") center/cover no-repeat;
-}
-
-#page-village {
-  background: url("villagefond.png") center/cover no-repeat;
-}
-
-/* Optionnel : assombrir un peu pour mieux lire le texte */
 .project-page {
   min-height: 100vh; /* occupe toute la hauteur */
   color: white;
@@ -156,7 +145,6 @@ body {
   position: relative;
   z-index: 1; /* au-dessus du fond */
 }
-
 
 .back-btn {
   background: #444;
@@ -202,4 +190,3 @@ h2 {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
