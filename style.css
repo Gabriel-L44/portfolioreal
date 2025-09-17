@@ -187,6 +187,7 @@ h2 {
 
 .project-page h2 {
   text-align: center;
+  font-size: 2em; 
   color: white; /* si tu veux que ça ressorte */
   margin-top: 20px; /* optionnel pour l'espacement */
 }
