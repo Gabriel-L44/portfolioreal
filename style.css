@@ -167,7 +167,7 @@ h2 {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 colonnes */
-  justify-content: space-between; /* pousse gauche/droite */
+  justify-content: stretch; /* pousse gauche/droite */
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -195,6 +195,8 @@ h2 {
   margin-top: 20px; /* optionnel pour l'espacement */
 }
 
+.grid > :nth-child(odd) { margin-left: -20px; }   /* décale encore plus à gauche */
+.grid > :nth-child(even) { margin-right: -20px; } /* décale encore plus à droite */
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
