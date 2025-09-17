@@ -195,8 +195,8 @@ h2 {
   margin-top: 20px; /* optionnel pour l'espacement */
 }
 
-.grid > :nth-child(odd) { margin-left: -20px; }   /* décale encore plus à gauche */
-.grid > :nth-child(even) { margin-right: -20px; } /* décale encore plus à droite */
+.grid > :nth-child(odd) { margin-left: -200px; }   /* décale encore plus à gauche */
+.grid > :nth-child(even) { margin-right: -200px; } /* décale encore plus à droite */
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
