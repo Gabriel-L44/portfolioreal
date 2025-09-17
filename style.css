@@ -121,9 +121,42 @@ body {
   display: none;
 }
 
+#page-ville {
+  background: url("images/ville-futuriste.png") center/cover no-repeat;
+}
+
+#page-ruines {
+  background: url("images/ruines.png") center/cover no-repeat;
+}
+
+#page-village {
+  background: url("images/village.png") center/cover no-repeat;
+}
+
+/* Optionnel : assombrir un peu pour mieux lire le texte */
 .project-page {
+  min-height: 100vh; /* occupe toute la hauteur */
+  color: white;
+  position: relative;
   padding: 20px;
 }
+
+.project-page::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4); /* filtre sombre */
+  z-index: 0;
+  animation: fadeIn 0.4s ease;
+}
+
+.project-page h2,
+.project-page .grid,
+.project-page .back-btn {
+  position: relative;
+  z-index: 1; /* au-dessus du fond */
+}
+
 
 .back-btn {
   background: #444;
@@ -163,11 +196,6 @@ h2 {
 .card:hover {
   background: #555;
   transform: scale(1.05);
-}
-
-.project-page {
-  padding: 20px;
-  animation: fadeIn 0.4s ease;
 }
 
 @keyframes fadeIn {
