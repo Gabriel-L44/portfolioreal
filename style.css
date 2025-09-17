@@ -167,7 +167,7 @@ h2 {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 colonnes */
-  justify-content: space-between; /* espace max entre gauche et droite */
+  justify-content: space-between; /* pousse gauche/droite */
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -179,6 +179,8 @@ h2 {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.2s, background 0.3s;
+  width: 200px;       /* largeur fixe (moyenne) */
+  justify-self: center; /* centre la card dans sa colonne */
 }
 
 .card:hover {
