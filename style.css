@@ -133,21 +133,14 @@ body {
   background: url("villagefond.png") center/cover no-repeat;
 }
 
-/* ===== Conteneur page ===== */
+/* Optionnel : assombrir un peu pour mieux lire le texte */
 .project-page {
-  width: 100%;
-  max-width: 1200px; /* comme ta map */
-  margin: 0 auto;
-  position: relative;
-  max-height: 90vh; /* comme ta map */
-  padding: 20px;
+  min-height: 100vh; /* occupe toute la hauteur */
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  position: relative;
+  padding: 20px;
 }
 
-/* ===== Fond sombre au-dessus de l’image ===== */
 .project-page::before {
   content: "";
   position: absolute;
@@ -157,12 +150,11 @@ body {
   animation: fadeIn 0.4s ease;
 }
 
-/* ===== Texte et contenu passent au-dessus ===== */
 .project-page h2,
 .project-page .grid,
 .project-page .back-btn {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* au-dessus du fond */
 }
 
 
