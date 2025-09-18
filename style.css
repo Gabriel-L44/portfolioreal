@@ -294,10 +294,12 @@ h2 {
   border-radius: 8px;   /* coins arrondis mais pas trop */
   cursor: pointer;
   transition: all 0.3s ease;
-  width: auto;          /* laisse le bouton s’adapter au texte */
-  min-width: 120px;     /* largeur minimale propre */
+  display: inline-block; /* ✅ bouton s’adapte au texte */
+  width: auto !important; /* ✅ annule toute règle qui impose une largeur */
+  min-width: unset;       /* ✅ enlève la largeur minimale */
   text-align: center;
 }
+
 
 /* Ruines antiques */
 #page-ruines .back-btn {
@@ -313,10 +315,12 @@ h2 {
   border-radius: 8px;   /* coins arrondis mais pas trop */
   cursor: pointer;
   transition: all 0.3s ease;
-  width: auto;          /* laisse le bouton s’adapter au texte */
-  min-width: 120px;     /* largeur minimale propre */
+  display: inline-block; /* ✅ bouton s’adapte au texte */
+  width: auto !important; /* ✅ annule toute règle qui impose une largeur */
+  min-width: unset;       /* ✅ enlève la largeur minimale */
   text-align: center;
 }
+
 #page-ruines .back-btn:hover {
   background: #0ef3ff;
   color: #000;
@@ -337,10 +341,12 @@ h2 {
   border-radius: 8px;   /* coins arrondis mais pas trop */
   cursor: pointer;
   transition: all 0.3s ease;
-  width: auto;          /* laisse le bouton s’adapter au texte */
-  min-width: 120px;     /* largeur minimale propre */
+  display: inline-block; /* ✅ bouton s’adapte au texte */
+  width: auto !important; /* ✅ annule toute règle qui impose une largeur */
+  min-width: unset;       /* ✅ enlève la largeur minimale */
   text-align: center;
 }
+
 #page-village .back-btn:hover {
   background: #8B4513;
   color: #fff;
