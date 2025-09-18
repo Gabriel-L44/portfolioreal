@@ -279,11 +279,11 @@ h2 {
 #page-ville .back-btn {
   background: #0ef3ff;
   color: #1a1a1a;
-  border: 2px solid #7d00ff;
+  border: 2px solid #0ef3ff;
   text-shadow: 0 0 5px #7d00ff;
 }
 #page-ville .back-btn:hover {
-  background: #7d00ff;
+  background: #0ef3ff;
   color: #fff;
   text-shadow: 0 0 8px #0ef3ff;
   transform: scale(1.1);
@@ -291,13 +291,13 @@ h2 {
 
 /* Ruines antiques */
 #page-ruines .back-btn {
-  background: #C2B280;
+  background: #ce9913;
   color: #1a1a1a;
-  border: 2px solid #0ef3ff;
+  border: 2px solid #43becc;
   font-family: "Georgia", serif;
 }
 #page-ruines .back-btn:hover {
-  background: #0ef3ff;
+  background: #43becc;
   color: #000;
   transform: scale(1.1);
 }
@@ -305,8 +305,8 @@ h2 {
 /* Village créatif */
 #page-village .back-btn {
   background: #228B22;
-  color: #fffbe6;
-  border: 2px solid #8B4513;
+  color: #546600;
+  border: 2px solid #8c5800;
   font-family: "Trebuchet MS", sans-serif;
 }
 #page-village .back-btn:hover {
