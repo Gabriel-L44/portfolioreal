@@ -173,19 +173,53 @@ h2 {
   margin: 0 auto;
 }
 
+/* Style par défaut (déjà présent) */
 .card {
   background: #333;
   border: 2px solid #666;
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.2s, background 0.3s;
-  width: 300px;       /* largeur fixe (moyenne) */
-  justify-self: center; /* centre la card dans sa colonne */
+  width: 300px;
+  justify-self: center;
 }
 
 .card:hover {
   background: #555;
   transform: scale(1.05);
+}
+
+/* ---- Ville futuriste ---- */
+#page-ville .card {
+  background: linear-gradient(135deg, #0ef3ff, #7d00ff); /* bleu néon -> violet */
+  border: 2px solid #0ef3ff;
+  color: white;
+}
+#page-ville .card:hover {
+  background: linear-gradient(135deg, #7d00ff, #0ef3ff);
+  transform: scale(1.08);
+}
+
+/* ---- Village créatif ---- */
+#page-village .card {
+  background: linear-gradient(135deg, #228B22, #8B4513); /* vert -> marron */
+  border: 2px solid #2ecc71;
+  color: #fffbe6;
+}
+#page-village .card:hover {
+  background: linear-gradient(135deg, #8B4513, #228B22);
+  transform: scale(1.08);
+}
+
+/* ---- Ruines antiques ---- */
+#page-ruines .card {
+  background: linear-gradient(135deg, #C2B280, #0ef3ff); /* sable -> bleu néon */
+  border: 2px solid #C2B280;
+  color: #1a1a1a;
+}
+#page-ruines .card:hover {
+  background: linear-gradient(135deg, #0ef3ff, #C2B280);
+  transform: scale(1.08);
 }
 
 .project-page h2 {
