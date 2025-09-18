@@ -192,7 +192,6 @@ h2 {
 /* ---- Ville futuriste ---- */
 #page-ville .card {
   background: linear-gradient(135deg, #0ef3ff, #7d00ff); /* bleu néon -> violet */
-  border: 2px solid #18104a;
   color: white;
 }
 #page-ville .card:hover {
@@ -203,7 +202,6 @@ h2 {
 /* ---- Village créatif ---- */
 #page-village .card {
   background: linear-gradient(135deg, #546600, #8c5800); /* vert -> marron */
-  border: 2px solid #546600;
   color: #fffbe6;
 }
 #page-village .card:hover {
@@ -214,7 +212,6 @@ h2 {
 /* ---- Ruines antiques ---- */
 #page-ruines .card {
   background: linear-gradient(135deg, #ce9913, #43becc); /* sable -> bleu néon */
-  border: 2px solid #693e00;
   color: #1a1a1a;
 }
 #page-ruines .card:hover {
