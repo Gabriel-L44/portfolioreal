@@ -176,7 +176,7 @@ h2 {
 /* Style par défaut (déjà présent) */
 .card {
   background: #333;
-  padding: 50px;
+  padding: 40px;
   border-radius: 10px;
   transition: transform 0.2s, background 0.3s;
   width: 300px;
@@ -224,7 +224,7 @@ h2 {
   text-align: center;
   font-size: 2em; 
   color: white; /* si tu veux que ça ressorte */
-  margin-top: 20px; /* optionnel pour l'espacement */
+  margin-top: 35px; /* optionnel pour l'espacement */
 }
 
 .grid > :nth-child(odd) { margin-left: -230px; }   /* décale encore plus à gauche */
