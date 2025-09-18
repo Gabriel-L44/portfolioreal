@@ -190,7 +190,7 @@ h2 {
 
 /* ---- Ville futuriste ---- */
 #page-ville .card {
-  background: linear-gradient(135deg, #0ef3ff, #7d00ff); /* bleu néon -> violet */
+  background: linear-gradient(135deg, #0ef3ff, #0ef3ff); /* bleu néon -> violet */
   color: white;
 }
 #page-ville .card:hover {
@@ -278,12 +278,11 @@ h2 {
 /* Ville futuriste */
 #page-ville .back-btn {
   background: #0ef3ff;
-  color: #1a1a1a;
-  border: 2px solid #0ef3ff;
-  text-shadow: 0 0 5px #7d00ff;
+  color: white;
+  border: 2px solid #7d00ff;
 }
 #page-ville .back-btn:hover {
-  background: #0ef3ff;
+  background: #7d00ff;
   color: #fff;
   text-shadow: 0 0 8px #0ef3ff;
   transform: scale(1.1);
@@ -291,13 +290,13 @@ h2 {
 
 /* Ruines antiques */
 #page-ruines .back-btn {
-  background: #ce9913;
-  color: #1a1a1a;
-  border: 2px solid #43becc;
+  background: #C2B280;
+  color: white;
+  border: 2px solid #0ef3ff;
   font-family: "Georgia", serif;
 }
 #page-ruines .back-btn:hover {
-  background: #43becc;
+  background: #0ef3ff;
   color: #000;
   transform: scale(1.1);
 }
@@ -305,8 +304,8 @@ h2 {
 /* Village créatif */
 #page-village .back-btn {
   background: #228B22;
-  color: #546600;
-  border: 2px solid #8c5800;
+  color: white;
+  border: 2px solid #8B4513;
   font-family: "Trebuchet MS", sans-serif;
 }
 #page-village .back-btn:hover {
