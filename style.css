@@ -286,6 +286,17 @@ h2 {
   color: #fff;
   text-shadow: 0 0 8px #0ef3ff;
   transform: scale(1.1);
+  align-self: center;
+  margin: 20px 0;
+  padding: 10px 20px;   /* réduit l’espace interne */
+  font-size: 1.1rem;    /* un peu plus petit */
+  font-weight: bold;
+  border-radius: 8px;   /* coins arrondis mais pas trop */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;          /* laisse le bouton s’adapter au texte */
+  min-width: 120px;     /* largeur minimale propre */
+  text-align: center;
 }
 
 /* Ruines antiques */
@@ -294,6 +305,17 @@ h2 {
   color: #1a1a1a;
   border: 2px solid #0ef3ff;
   font-family: "Georgia", serif;
+  align-self: center;
+  margin: 20px 0;
+  padding: 10px 20px;   /* réduit l’espace interne */
+  font-size: 1.1rem;    /* un peu plus petit */
+  font-weight: bold;
+  border-radius: 8px;   /* coins arrondis mais pas trop */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;          /* laisse le bouton s’adapter au texte */
+  min-width: 120px;     /* largeur minimale propre */
+  text-align: center;
 }
 #page-ruines .back-btn:hover {
   background: #0ef3ff;
@@ -307,14 +329,6 @@ h2 {
   color: #fffbe6;
   border: 2px solid #8B4513;
   font-family: "Trebuchet MS", sans-serif;
-}
-#page-village .back-btn:hover {
-  background: #8B4513;
-  color: #fff;
-  transform: scale(1.1);
-}
-
-.back-btn {
   align-self: center;
   margin: 20px 0;
   padding: 10px 20px;   /* réduit l’espace interne */
@@ -326,4 +340,9 @@ h2 {
   width: auto;          /* laisse le bouton s’adapter au texte */
   min-width: 120px;     /* largeur minimale propre */
   text-align: center;
+}
+#page-village .back-btn:hover {
+  background: #8B4513;
+  color: #fff;
+  transform: scale(1.1);
 }
