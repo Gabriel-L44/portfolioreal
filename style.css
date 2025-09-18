@@ -315,12 +315,15 @@ h2 {
 }
 
 .back-btn {
-  align-self: center; /* centre horizontalement */
-  margin: 30px 0;
-  padding: 15px 30px;
-  font-size: 1.3rem;
+  align-self: center;
+  margin: 20px 0;
+  padding: 10px 20px;   /* réduit l’espace interne */
+  font-size: 1.1rem;    /* un peu plus petit */
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 8px;   /* coins arrondis mais pas trop */
   cursor: pointer;
   transition: all 0.3s ease;
+  width: auto;          /* laisse le bouton s’adapter au texte */
+  min-width: 120px;     /* largeur minimale propre */
+  text-align: center;
 }
