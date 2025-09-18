@@ -190,7 +190,7 @@ h2 {
 
 /* ---- Ville futuriste ---- */
 #page-ville .card {
-  background: linear-gradient(135deg, #0ef3ff, #0ef3ff); /* bleu néon -> violet */
+  background: linear-gradient(135deg, #0ef3ff, #7d00ff); /* bleu néon -> violet */
   color: white;
 }
 #page-ville .card:hover {
