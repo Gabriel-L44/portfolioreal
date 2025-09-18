@@ -319,17 +319,14 @@ h2 {
 
 /* règle générique */
 .back-btn {
-  display: block;            /* occupe une ligne */
-  width: fit-content;        /* largeur = taille du texte */
-  max-width: 100%;
-  margin: 30px auto;         /* centre horizontalement */
-  padding: 10px 20px;
-  text-align: center;
-  box-sizing: border-box;
-  border-radius: 8px;
+  display: block;
+  width: fit-content;
+  margin: 75px auto 30px auto; /* ↑ plus de marge au-dessus */
+  padding: 15px 35px;          /* ↑ bouton plus grand */
+  font-size: 1.3rem;           /* ↑ texte plus gros */
   font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
-
