@@ -242,3 +242,33 @@ h2 {
   font-size: 1em;
   margin: 0;
 }
+
+/* ==== Ville futuriste ==== */
+#page-ville h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* ==== Ruines antiques ==== */
+#page-ruines h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin: 20px 0;
+  font-family: "Georgia", serif; /* police plus classique, style antique */
+}
+
+/* ==== Village créatif ==== */
+#page-village h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin: 20px 0;
+  font-family: "Trebuchet MS", sans-serif; /* police plus chaleureuse */
+}
+
