@@ -353,16 +353,23 @@ h2 {
   transform: scale(1.1);
 }
 
+/* règle générique */
 .back-btn {
-  background: #444;
-  color: #fff;
-  border: none;
+  display: block;            /* reste dans le flux */
+  width: fit-content;        /* <--- rétrécit à la taille du texte */
+  max-width: 100%;           /* sécurité sur petits écrans */
+  margin: 30px auto;         /* centre horizontalement */
   padding: 10px 20px;
-  margin: 30px auto;   /* ✅ centre horizontalement */
-  cursor: pointer;
-  border-radius: 6px;
-  display: block;      /* ✅ bouton traité comme un bloc */
-  width: auto;         /* ✅ s’adapte au texte */
   text-align: center;
+  box-sizing: border-box;
+}
+
+/* s'assurer que les règles per-page ne contiennent pas d'incohérences
+   (si tu as mis width/display uniquement dans :hover, les déplacer ici) */
+#page-ville .back-btn,
+#page-ruines .back-btn,
+#page-village .back-btn {
+  width: fit-content;
+  display: block;
 }
 
