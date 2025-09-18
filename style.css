@@ -141,22 +141,7 @@ body {
 .project-page h2,
 .project-page .grid,
 .project-page .back-btn {
-  position: relative;
   z-index: 1; /* au-dessus du fond */
-}
-
-.back-btn {
-  background: #444;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-.back-btn:hover {
-  background: #666;
 }
 
 h2 {
