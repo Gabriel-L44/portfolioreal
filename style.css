@@ -128,6 +128,9 @@ body {
   color: white;
   position: relative;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre horizontalement tout le contenu */
 }
 
 .project-page::before {
@@ -156,6 +159,12 @@ h2 {
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: auto; /* pousse le bouton vers le bas */
+}
+
+.back-btn {
+  align-self: center; /* centre chaque bouton dans sa page */
+  margin-top: 40px;   /* espace au-dessus pour respirer */
 }
 
 /* Style par défaut (déjà présent) */
