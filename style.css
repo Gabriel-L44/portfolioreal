@@ -290,13 +290,13 @@ h2 {
 
 /* Ruines antiques */
 #page-ruines .back-btn {
-  background: #C2B280;
+  background: #ce9913;
   color: white;
-  border: 2px solid #0ef3ff;
+  border: 2px solid #43becc;
   font-family: "Georgia", serif;
 }
 #page-ruines .back-btn:hover {
-  background: #0ef3ff;
+  background: #43becc;
   color: #000;
   transform: scale(1.1);
 }
