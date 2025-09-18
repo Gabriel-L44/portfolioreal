@@ -128,9 +128,6 @@ body {
   color: white;
   position: relative;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centre horizontalement tout le contenu */
 }
 
 .project-page::before {
@@ -144,7 +141,22 @@ body {
 .project-page h2,
 .project-page .grid,
 .project-page .back-btn {
+  position: relative;
   z-index: 1; /* au-dessus du fond */
+}
+
+.back-btn {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.back-btn:hover {
+  background: #666;
 }
 
 h2 {
@@ -159,12 +171,6 @@ h2 {
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  margin-bottom: auto; /* pousse le bouton vers le bas */
-}
-
-.back-btn {
-  align-self: center; /* centre chaque bouton dans sa page */
-  margin-top: 40px;   /* espace au-dessus pour respirer */
 }
 
 /* Style par défaut (déjà présent) */
@@ -346,3 +352,24 @@ h2 {
   color: #fff;
   transform: scale(1.1);
 }
+
+/* règle générique */
+.back-btn {
+  display: block;            /* reste dans le flux */
+  width: fit-content;        /* <--- rétrécit à la taille du texte */
+  max-width: 100%;           /* sécurité sur petits écrans */
+  margin: 30px auto;         /* centre horizontalement */
+  padding: 10px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* s'assurer que les règles per-page ne contiennent pas d'incohérences
+   (si tu as mis width/display uniquement dans :hover, les déplacer ici) */
+#page-ville .back-btn,
+#page-ruines .back-btn,
+#page-village .back-btn {
+  width: fit-content;
+  display: block;
+}
+
