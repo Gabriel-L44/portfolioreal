@@ -322,7 +322,7 @@ h2 {
   display: block;
   width: fit-content;
   margin: 75px auto 30px auto; /* ↑ plus de marge au-dessus */
-  padding: 15px 35px;          /* ↑ bouton plus grand */
+  padding: 10px 25px;          /* ↑ bouton plus grand */
   font-size: 1.3rem;           /* ↑ texte plus gros */
   font-weight: bold;
   text-align: center;
