@@ -176,7 +176,6 @@ h2 {
 /* Style par défaut (déjà présent) */
 .card {
   background: #333;
-  border: 2px solid #666;
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.2s, background 0.3s;
