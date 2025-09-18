@@ -202,23 +202,23 @@ h2 {
 
 /* ---- Village créatif ---- */
 #page-village .card {
-  background: linear-gradient(135deg, #228B22, #8B4513); /* vert -> marron */
+  background: linear-gradient(135deg, #546600, #8c5800); /* vert -> marron */
   border: 2px solid #2ecc71;
   color: #fffbe6;
 }
 #page-village .card:hover {
-  background: linear-gradient(135deg, #8B4513, #228B22);
+  background: linear-gradient(135deg, #8c5800, #546600);
   transform: scale(1.08);
 }
 
 /* ---- Ruines antiques ---- */
 #page-ruines .card {
-  background: linear-gradient(135deg, #C2B280, #0ef3ff); /* sable -> bleu néon */
+  background: linear-gradient(135deg, #ce9913, #43becc); /* sable -> bleu néon */
   border: 2px solid #C2B280;
   color: #1a1a1a;
 }
 #page-ruines .card:hover {
-  background: linear-gradient(135deg, #0ef3ff, #C2B280);
+  background: linear-gradient(135deg, #43becc, #ce9913);
   transform: scale(1.08);
 }
 
