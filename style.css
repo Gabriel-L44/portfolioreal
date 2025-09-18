@@ -275,3 +275,41 @@ h2 {
   font-family: "Trebuchet MS", sans-serif; /* police plus chaleureuse */
 }
 
+#page-ville .back-btn {
+  background: #0ef3ff;
+  color: #1a1a1a;
+  border: 2px solid #7d00ff;
+  text-shadow: 0 0 5px #7d00ff;
+}
+#page-ville .back-btn:hover {
+  background: #7d00ff;
+  color: #fff;
+  text-shadow: 0 0 8px #0ef3ff;
+  transform: scale(1.1);
+}
+
+/* Ruines antiques */
+#page-ruines .back-btn {
+  background: #C2B280;
+  color: #1a1a1a;
+  border: 2px solid #0ef3ff;
+  font-family: "Georgia", serif;
+}
+#page-ruines .back-btn:hover {
+  background: #0ef3ff;
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Village créatif */
+#page-village .back-btn {
+  background: #228B22;
+  color: #fffbe6;
+  border: 2px solid #8B4513;
+  font-family: "Trebuchet MS", sans-serif;
+}
+#page-village .back-btn:hover {
+  background: #8B4513;
+  color: #fff;
+  transform: scale(1.1);
+}
