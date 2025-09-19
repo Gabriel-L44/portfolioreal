@@ -255,8 +255,6 @@ h2 {
   font-weight: bold;
   color: white;
   text-align: center;
-  margin: 20px 0;
-  margin-bottom: 75px;
 }
 
 /* ==== Ruines antiques ==== */
@@ -265,8 +263,6 @@ h2 {
   font-weight: bold;
   color: white;
   text-align: center;
-  margin: 20px 0;
-  margin-bottom: 75px;
   font-family: "Georgia", serif; /* police plus classique, style antique */
 }
 
@@ -276,8 +272,6 @@ h2 {
   font-weight: bold;
   color: white;
   text-align: center;
-  margin: 20px 0;
-  margin-bottom: 75px;
   font-family: "Trebuchet MS", sans-serif; /* police plus chaleureuse */
 }
 
