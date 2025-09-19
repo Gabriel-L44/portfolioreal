@@ -222,10 +222,12 @@ h2 {
 }
 
 .project-page h2 {
+  margin-top: 75px;
+  margin-bottom: 75px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
   text-align: center;
-  font-size: 2em; 
-  color: white; /* si tu veux que ça ressorte */
-  margin-top: 35px; /* optionnel pour l'espacement */
 }
 
 .grid > :nth-child(odd) { margin-left: -230px; }   /* décale encore plus à gauche */
@@ -255,7 +257,6 @@ h2 {
   text-align: center;
   margin: 20px 0;
   margin-bottom: 75px;
-  margin-top: 20px;
 }
 
 /* ==== Ruines antiques ==== */
@@ -266,7 +267,6 @@ h2 {
   text-align: center;
   margin: 20px 0;
   margin-bottom: 75px;
-  margin-top: 20px;
   font-family: "Georgia", serif; /* police plus classique, style antique */
 }
 
@@ -278,7 +278,6 @@ h2 {
   text-align: center;
   margin: 20px 0;
   margin-bottom: 75px;
-  margin-top: 20px;
   font-family: "Trebuchet MS", sans-serif; /* police plus chaleureuse */
 }
 
