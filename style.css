@@ -22,8 +22,9 @@ body {
 /* ===== SVG ===== */
 #portfolio-map {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 100%;     /* prend toute la largeur écran */
+  height: auto;    /* garde les proportions */
+  max-height: 90vh; /* limite la hauteur si tu veux */
 }
 
 /* ===== Image de fond de la map ===== */
