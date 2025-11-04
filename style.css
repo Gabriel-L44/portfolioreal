@@ -11,19 +11,20 @@ body {
 }
 
 /* ===== Conteneur ===== */
-/* ===== MAP RESPONSIVE ET CENTRÉE ===== */
 .map-container {
-  width: 100%;
-  max-width: 1400px;        /* taille max sur grand écran */
-  aspect-ratio: 406.4 / 270.93; /* garde le bon ratio sans déformer */
-  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #portfolio-map {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* ===== Image de fond de la map ===== */
@@ -368,11 +369,3 @@ h2 {
     padding: 20px;
   }
 }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background: #0e0e0e;
-}
-
