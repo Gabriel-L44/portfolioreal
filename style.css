@@ -13,18 +13,24 @@ body {
 
 /* ===== Conteneur Map ===== */
 .map-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  max-height: 90vh;
+  width: 100vw;          /* plein écran horizontal */
+  height: 100vh;         /* plein écran vertical */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;      /* évite les barres de scroll */
+  margin: 0;
+  padding: 0;
+  background: #0e0e0e;
 }
 
+/* ===== SVG ===== */
 #portfolio-map {
-  display: block;
-  width: 100%;
+  width: 180%;           /* agrandit la carte */
   height: auto;
-  max-height: 90vh;
+  max-height: none;
+  transform: scale(1.3); /* zoom général de la map */
+  transform-origin: center;
 }
 
 /* ===== Image de fond ===== */
