@@ -12,13 +12,14 @@ body {
 }
 
 /* ===== Conteneur Map ===== */
+/* ===== Conteneur Map ===== */
 .map-container {
-  width: 100vw;          /* plein écran horizontal */
-  height: 100vh;         /* plein écran vertical */
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;      /* évite les barres de scroll */
+  overflow: hidden;
   margin: 0;
   padding: 0;
   background: #0e0e0e;
@@ -26,10 +27,10 @@ body {
 
 /* ===== SVG ===== */
 #portfolio-map {
-  width: 180%;           /* agrandit la carte */
+  width: 120%;          /* taille idéale, ni trop grande ni trop petite */
   height: auto;
-  max-height: none;
-  transform: scale(1.3); /* zoom général de la map */
+  max-height: 90vh;
+  transform: scale(1.05); /* zoom doux */
   transform-origin: center;
 }
 
@@ -324,3 +325,17 @@ h2 {
     font-size: .9rem;
   }
 }
+
+@media (max-width: 900px) {
+  #portfolio-map {
+    width: 110%;
+    transform: scale(1);
+  }
+}
+@media (max-width: 600px) {
+  #portfolio-map {
+    width: 100%;
+    transform: scale(0.95);
+  }
+}
+
