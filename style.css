@@ -2,6 +2,7 @@
 :root {
   --accent: #0ef3ff;
 }
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -10,7 +11,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== Conteneur ===== */
+/* ===== Conteneur Map ===== */
 .map-container {
   width: 100%;
   max-width: 1200px;
@@ -19,17 +20,16 @@ body {
   max-height: 90vh;
 }
 
-/* ===== SVG ===== */
 #portfolio-map {
   display: block;
-  width: 100%;     /* prend toute la largeur écran */
-  height: auto;    /* garde les proportions */
-  max-height: 90vh; /* limite la hauteur si tu veux */
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
 }
 
-/* ===== Image de fond de la map ===== */
+/* ===== Image de fond ===== */
 .map-bg {
-  pointer-events: none; /* La map ne doit pas capter les événements */
+  pointer-events: none;
 }
 
 /* ===== Calques ===== */
@@ -38,20 +38,20 @@ body {
 }
 
 .overlay-image {
-  transition: transform 0.36s cubic-bezier(.2,.9,.2,1), filter 0.36s;
-  transform-origin: center center; /* zoom depuis le centre */
-  transform-box: fill-box;         /* important pour SVG <image> */
+  transition: transform 0.36s cubic-bezier(.2, .9, .2, 1), filter 0.36s;
+  transform-origin: center center;
+  transform-box: fill-box;
   will-change: transform, filter;
   pointer-events: visiblePainted;
 }
 
 .overlay-wrapper:hover .overlay-image {
-  transform: scale(1.2) translateY(-6px); /* zoom + petit décalage vers le haut */
+  transform: scale(1.2) translateY(-6px);
   filter: drop-shadow(0 10px 24px rgba(14,243,255,0.35))
           drop-shadow(0 0 40px rgba(14,243,255,0.25));
 }
 
-/* ===== Zones SVG interactives ===== */
+/* ===== Zones interactives ===== */
 .region {
   fill: rgba(255,255,255,0.05);
   stroke: var(--accent);
@@ -68,17 +68,17 @@ body {
   box-shadow: 0 0 30px rgba(14,243,255,0.35);
 }
 
-/* ===== Texte caché au départ ===== */
+/* ===== Texte caché ===== */
 .slide-text {
   opacity: 0;
   transform: translate(0,0) scale(0.5);
-  transform-box: fill-box;  /* nécessaire en SVG */
+  transform-box: fill-box;
   transform-origin: center center;
   transition: transform 0.6s ease, opacity 0.6s ease;
   pointer-events: none;
 }
 
-/* ===== Ville : slide vers le bas, taille adaptée ===== */
+/* ==== Animations textes ==== */
 .ville .slide-text {
   width: 140px;
   height: 60px;
@@ -88,7 +88,6 @@ body {
   transform: translate(0, 70px) scale(1);
 }
 
-/* ===== Ruines : slide vers le bas, taille différente ===== */
 .ruines .slide-text {
   width: 82px;
   height: 21px;
@@ -98,7 +97,6 @@ body {
   transform: translate(0, 65px) scale(1);
 }
 
-/* ===== Village : slide vers la droite, taille adaptée ===== */
 .village .slide-text {
   width: 110px;
   height: 32px;
@@ -113,7 +111,6 @@ body {
   display: none;
 }
 
-/* Nouveau fond via <img> */
 .page-bg {
   display: block;
   width: 100%;
@@ -121,11 +118,11 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; /* reste derrière le contenu */
+  z-index: -1;
 }
 
 .project-page {
-  min-height: 100vh; /* occupe toute la hauteur */
+  min-height: 100vh;
   color: white;
   position: relative;
   padding: 20px;
@@ -143,48 +140,56 @@ body {
 .project-page .grid,
 .project-page .back-btn {
   position: relative;
-  z-index: 1; /* au-dessus du fond */
+  z-index: 1;
 }
 
+/* ===== Bouton Retour ===== */
 .back-btn {
+  display: block;
+  width: fit-content;
+  margin: 75px auto 30px auto;
+  padding: 10px 25px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
   background: #444;
   color: #fff;
   border: none;
-  padding: 10px 15px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  border-radius: 6px;
 }
 
 .back-btn:hover {
   background: #666;
 }
 
+/* ===== Titres & Grilles ===== */
 h2 {
   margin-top: 15px;
   margin-bottom: 80px;
   font-size: 4em;
+  text-align: center;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 colonnes */
-  justify-content: stretch; /* pousse gauche/droite */
+  grid-template-columns: 1fr 1fr;
+  justify-content: stretch;
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Style par défaut (déjà présent) */
+/* ===== Cartes ===== */
 .card {
   background: #333;
   padding: 40px;
   border-radius: 10px;
   transition: transform 0.2s, background 0.3s;
   width: 300px;
-  margin-bottom: 15px;
-  margin-top: 10px;
-  cursor: pointer;            /* curseur main */
+  margin: 10px auto 15px;
+  cursor: pointer;
   user-select: none;
   justify-self: center;
 }
@@ -195,94 +200,22 @@ h2 {
 }
 
 .card:active {
-  transform: scale(0.96);     /* petit effet "clic pressé" */
+  transform: scale(0.96);
 }
 
-/* ---- Ville futuriste ---- */
+/* ===== Thèmes pages ===== */
+
+/* Ville futuriste */
 #page-ville .card {
-  background: linear-gradient(135deg, #0ef3ff, #7d00ff); /* bleu néon -> violet */
+  background: linear-gradient(135deg, #0ef3ff, #7d00ff);
   color: white;
 }
 #page-ville .card:hover {
   background: linear-gradient(135deg, #7d00ff, #0ef3ff);
   transform: scale(1.08);
 }
-
-/* ---- Village créatif ---- */
-#page-village .card {
-  background: linear-gradient(135deg, #546600, #8c5800); /* vert -> marron */
-  color: #fffbe6;
-}
-#page-village .card:hover {
-  background: linear-gradient(135deg, #8c5800, #546600);
-  transform: scale(1.08);
-}
-
-/* ---- Ruines antiques ---- */
-#page-ruines .card {
-  background: linear-gradient(135deg, #ce9913, #43becc); /* sable -> bleu néon */
-  color: #1a1a1a;
-}
-#page-ruines .card:hover {
-  background: linear-gradient(135deg, #43becc, #ce9913);
-  transform: scale(1.08);
-}
-
-.project-page h2 {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.card h1 {
-  font-size: 1.5em; /* titre plus grand */
-  margin-bottom: 12px;
-  margin-top: -5px;
-}
-
-.card p {
-  font-size: 1em;
-  margin: 0;
-}
-
-/* ==== Ville futuriste ==== */
-#page-ville h2 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-}
-
-/* ==== Ruines antiques ==== */
-#page-ruines h2 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  font-family: "Georgia", serif; /* police plus classique, style antique */
-}
-
-/* ==== Village créatif ==== */
-#page-village h2 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  font-family: "Trebuchet MS", sans-serif; /* police plus chaleureuse */
-}
-
-/* Ville futuriste */
 #page-ville .back-btn {
   background: #0ef3ff;
-  color: white;
   border: 2px solid #7d00ff;
 }
 #page-ville .back-btn:hover {
@@ -292,9 +225,16 @@ h2 {
 }
 
 /* Ruines antiques */
+#page-ruines .card {
+  background: linear-gradient(135deg, #ce9913, #43becc);
+  color: #1a1a1a;
+}
+#page-ruines .card:hover {
+  background: linear-gradient(135deg, #43becc, #ce9913);
+  transform: scale(1.08);
+}
 #page-ruines .back-btn {
   background: #ce9913;
-  color: white;
   border: 2px solid #43becc;
   font-family: "Georgia", serif;
 }
@@ -305,9 +245,16 @@ h2 {
 }
 
 /* Village créatif */
+#page-village .card {
+  background: linear-gradient(135deg, #546600, #8c5800);
+  color: #fffbe6;
+}
+#page-village .card:hover {
+  background: linear-gradient(135deg, #8c5800, #546600);
+  transform: scale(1.08);
+}
 #page-village .back-btn {
   background: #546600;
-  color: white;
   border: 2px solid #8c5800;
   font-family: "Trebuchet MS", sans-serif;
 }
@@ -317,88 +264,57 @@ h2 {
   transform: scale(1.1);
 }
 
-
-
-/* règle générique */
-.back-btn {
-  display: block;
-  width: fit-content;
-  margin: 75px auto 30px auto; /* ↑ plus de marge au-dessus */
-  padding: 10px 25px;          /* ↑ bouton plus grand */
-  font-size: 1.3rem;           /* ↑ texte plus gros */
-  font-weight: bold;
-  text-align: center;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.map-page .map-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  max-height: 90vh;
+/* ===== Textes cartes ===== */
+.card h1 {
+  font-size: 1.5em;
+  margin-bottom: 12px;
+  margin-top: -5px;
+}
+.card p {
+  font-size: 1em;
+  margin: 0;
 }
 
-.map-page #portfolio-map {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 90vh;
-}
+/* ===== Responsive ===== */
 
 /* Tablette */
 @media (max-width: 900px) {
-  .map-page .overlay-image {
-    transform: scale(0.9);
+  .map-container {
+    max-height: 70vh;
   }
-
-  .map-page .slide-text {
-    transform: none !important;
-  }
-}
-
-/* Responsive global */
-@media (max-width: 900px) {
   h2 {
     font-size: 2rem;
     margin-bottom: 40px;
   }
-
   .grid {
-    grid-template-columns: 1fr; /* 1 colonne */
+    grid-template-columns: 1fr;
     gap: 15px;
   }
-
-  .grid > * {
-    margin: 0 !important; /* enlève tes décalages */
-    width: 90%;
-    justify-self: center;
-  }
-
   .card {
+    width: 90%;
     padding: 25px;
   }
 }
 
-/* Très petit écran */
+/* Téléphone */
 @media (max-width: 600px) {
   h2 {
     font-size: 1.7rem;
   }
-
   .back-btn {
     font-size: 1.1rem;
     padding: 8px 18px;
   }
-
   .card h1 {
     font-size: 1.2rem;
   }
-
   .card p {
     font-size: .9rem;
   }
 }
-
