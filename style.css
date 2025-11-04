@@ -237,9 +237,6 @@ h2 {
   text-align: center;
 }
 
-.grid > :nth-child(odd) { margin-left: -230px; }   /* décale encore plus à gauche */
-.grid > :nth-child(even) { margin-right: -230px; } /* décale encore plus à droite */
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -362,27 +359,46 @@ h2 {
   }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .map-page .map-container {
-    max-height: 70vh;
+/* Responsive global */
+@media (max-width: 900px) {
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
   }
 
-  .map-page #portfolio-map {
-    max-height: 70vh;
+  .grid {
+    grid-template-columns: 1fr; /* 1 colonne */
+    gap: 15px;
   }
 
-  .map-page .overlay-image {
-    transform: scale(0.8);
+  .grid > * {
+    margin: 0 !important; /* enlève tes décalages */
+    width: 90%;
+    justify-self: center;
   }
 
-  /* Désactiver hover mobile */
-  .map-page .overlay-wrapper:hover .overlay-image {
-    transform: scale(0.85);
-    filter: none;
-  }
-  .map-page .overlay-wrapper:hover .slide-text {
-    opacity: 1;
-    transform: none;
+  .card {
+    padding: 25px;
   }
 }
+
+/* Très petit écran */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .back-btn {
+    font-size: 1.1rem;
+    padding: 8px 18px;
+  }
+
+  .card h1 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: .9rem;
+  }
+}
+
