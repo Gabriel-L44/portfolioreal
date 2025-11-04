@@ -12,19 +12,19 @@ body {
 
 /* ===== Conteneur ===== */
 .map-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
   position: relative;
-  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* ===== SVG ===== */
 #portfolio-map {
-  display: block;
-  width: 100%;     /* prend toute la largeur écran */
-  height: auto;    /* garde les proportions */
-  max-height: 90vh; /* limite la hauteur si tu veux */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* ===== Image de fond de la map ===== */
@@ -168,10 +168,11 @@ h2 {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 colonnes */
-  justify-content: stretch; /* pousse gauche/droite */
-  gap: 20px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -237,8 +238,9 @@ h2 {
   text-align: center;
 }
 
-.grid > :nth-child(odd) { margin-left: -230px; }   /* décale encore plus à gauche */
-.grid > :nth-child(even) { margin-right: -230px; } /* décale encore plus à droite */
+.grid > * {
+  margin: 0 auto;
+}
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
@@ -334,4 +336,36 @@ h2 {
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+  .card {
+    width: 90%;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+  .map-container {
+    height: auto;
+  }
+  #portfolio-map {
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+  .card {
+    width: 100%;
+    padding: 20px;
+  }
 }
